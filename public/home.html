@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>Welcome to Suzz's !!!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicon@2.13.0/devicon.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
       /* Ensure there's no additional padding/margin affecting layout */
@@ -37,6 +54,49 @@
         font-weight: 400;
         font-style: normal;
       }
+      .timeline {
+        position: absolute;
+        left: 4%;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #7f00ff, #e100ff, #4ade80);
+        transform: translateX(-50%);
+        margin-top: 4rem;
+      }
+      .entry {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 4rem;
+        margin-left: 3rem;
+        width: 75%;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-right: 1rem;
+        transform: translateX(-50%);
+      }
+      .entry-content {
+        background-color: #1f2937;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: start;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-left: 2rem;
+        flex: 1;
+      }
+      .entry:nth-last-child(1) .timeline-end {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -55,9 +115,30 @@
             >
           </div>
         </nav>
+      </div>
 
-
-        
+      <div id="skills" class="bg-[#c0c3c4ff] text-black p-16">
+        <h1 class="text-4xl text-center font1 p-16">MY SKILLS</h1>
+        <div class="flex flex-wrap justify-center space-x-16 text-8xl mx-6">
+          <i class="devicon-c-plain" title="C"></i>
+          <i class="devicon-java-plain" title="Java"></i>
+          <i class="devicon-python-plain mr-2" title="Python"></i>
+          <i class="devicon-typescript-plain mr-2" title="TypeScript"></i>
+          <i class="devicon-firebase-plain mr-2" title="Firebase"></i>
+          <i class="devicon-mysql-plain mr-2" title="MySQL"></i>
+          <i class="devicon-oracle-original mr-2" title="Oracle"></i>
+          <i class="devicon-angularjs-plain mr-2" title="Angular"></i>
+          <i class="devicon-react-original mr-2" title="React"></i>
+          <i class="devicon-ionic-original mr-2" title="Ionic"></i>
+          <i class="devicon-django-plain mr-2" title="Django"></i>
+          <i class="devicon-dotnetcore-plain mr-2" title=".Net"></i>
+          <i class="devicon-html5-plain mr-2" title="HTML"></i>
+          <i class="devicon-css3-plain mr-2" title="CSS"></i>
+          <i class="devicon-visualstudio-plain mr-2" title="Visual Studios"></i>
+          <i class="devicon-git-plain mr-2" title="Git"></i>
+          <i class="devicon-docker-plain mr-2" title="Docker"></i>
+          <i class="devicon-pandas-plain mr-2" title="Pandas"></i>
+        </div>
       </div>
     </div>
   </body>

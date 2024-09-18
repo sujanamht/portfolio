@@ -23,116 +23,114 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicon@2.13.0/devicon.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <style>
+      body {
+        overflow-x: hidden;
+      }
       .font {
         font-family: "Quintessential", serif;
-        font-weight: 400;
-        font-style: normal;
       }
       .nunito {
         font-family: "Nunito", sans-serif;
-        font-weight: 400;
-        font-style: normal;
       }
       .font1 {
         font-family: "Amita", serif;
-        font-weight: 400;
-        font-style: normal;
       }
       .w-88 {
         width: 22rem;
       }
     </style>
+    <script defer>
+      function togglePopup(show) {
+        const popup = document.getElementById("popupModal");
+        if (show) {
+          popup.classList.remove("hidden");
+        } else {
+          popup.classList.add("hidden");
+        }
+      }
+    </script>
   </head>
   <body>
-    <div class="nunito text-white">
-      <div id="header">
-        <nav class="absolute top-0 right-0 p-8 z-20">
+    <div class="nunito">
+      <div id="header" class="text-white">
+        <nav
+          class="absolute top-0 left-0 right-0 p-8 z-20 flex items-center justify-between"
+        >
+          <div class="flex space-x-8">
+            <a
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              class="text-blue-400 hover:text-blue-800"
+            >
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a
+              href="https://github.com/your-username"
+              target="_blank"
+              class="text-gray-400 hover:text-white"
+            >
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+          </div>
           <div>
             <a href="home.html"><h1 class="text-3xl font1">SUJANA</h1></a>
           </div>
         </nav>
-        <div
-          class="absolute inset-0 bg-black opacity-80 shadow flex flex-col justify-center items-end w-full pr-32"
-        >
-          <h1 class="text-6xl mt-40">Sujana Mehta</h1>
-          <div class="flex mt-6">
-            <p class="right-0 w-1/2 ml-auto text-right">
-              Delve into my space and enjoy your time knowing me. Here you'll
-              find a showcase of my work, my journey in learning, and the
-              projects I've dedicated my time to.
-            </p>
+        <div id="intro" class="">
+          <div class="absolute w-96 h-96 bottom-8 ml-32">
+            <div
+              class="absolute inset-0 bg-white w-96 h-96 rounded-full z-10"
+            ></div>
+            <img
+              src="./img/me.png"
+              alt="Me"
+              class="absolute inset-0 -mt-24 rounded-full z-20 h-auto w-96"
+            />
+          </div>
+          <div
+            class="absolute inset-0 bg-black opacity-80 shadow flex flex-col justify-center items-end w-full pr-32"
+          >
+            <h1 class="text-6xl mt-40">Sujana Mehta</h1>
+            <div class="flex mt-6">
+              <p class="right-0 w-1/2 ml-auto text-right">
+                Delve into my space and enjoy your time knowing me. Here you'll
+                find a showcase of my work, my journey in learning, and the
+                projects I've dedicated my time to.
+              </p>
+            </div>
+            <button
+              class="z-20 mt-6 px-8 py-2 text-white border border-white font-semibold rounded-full hover:bg-white hover:text-gray-800 transition duration-300"
+            >
+              CONTACT ME
+            </button>
           </div>
         </div>
 
         <video autoplay loop muted class="w-full object-cover h-3/4">
           <source src="./img/mountain.mp4" type="video/mp4" />
         </video>
-        <!-- <svg
-          width="100%"
-          height="100%"
-          id="svg"
-          viewBox="0 0 1440 390"
-          xmlns="http://www.w3.org/2000/svg"
-          class="transition duration-300 ease-in-out delay-150 absolute inset-x-0 w-full top-64"
-        >
-          <style>
-            .path-0 {
-              animation: pathAnim-0 4s;
-              animation-timing-function: linear;
-              animation-iteration-count: infinite;
-            }
-            @keyframes pathAnim-0 {
-              0% {
-                d: path(
-                  "M 0,400 L 0,0 C 45.56793078055965,28.415316642120764 91.1358615611193,56.83063328424153 150,90 C 208.8641384388807,123.16936671575847 281.02448453608247,161.09278350515464 356,162 C 430.97551546391753,162.90721649484536 508.7662002945508,126.7982326951399 568,119 C 627.2337997054492,111.2017673048601 667.9107142857142,131.71428571428572 718,165 C 768.0892857142858,198.28571428571428 827.5909425625921,244.34462444771722 895,215 C 962.4090574374079,185.65537555228278 1037.7255154639174,80.90721649484534 1098,80 C 1158.2744845360826,79.09278350515466 1203.506995581738,182.02650957290135 1258,186 C 1312.493004418262,189.97349042709865 1376.246502209131,94.98674521354933 1440,0 L 1440,400 L 0,400 Z"
-                );
-              }
-              25% {
-                d: path(
-                  "M 0,400 L 0,0 C 43.116531664212076,100.83781296023564 86.23306332842415,201.67562592047128 159,218 C 231.76693667157585,234.32437407952872 334.18427835051546,166.13530927835052 392,125 C 449.81572164948454,83.86469072164947 463.02982326951405,69.78313696612665 521,75 C 578.970176730486,80.21686303387335 681.6964285714286,104.73214285714286 747,132 C 812.3035714285714,159.26785714285714 840.1844624447717,189.28829160530194 884,167 C 927.8155375552283,144.71170839469806 987.5657216494844,70.11469072164947 1056,89 C 1124.4342783505156,107.88530927835053 1201.55265095729,220.25294550810017 1267,221 C 1332.44734904271,221.74705449189983 1386.223674521355,110.87352724594992 1440,0 L 1440,400 L 0,400 Z"
-                );
-              }
-              50% {
-                d: path(
-                  "M 0,400 L 0,0 C 70.62794550810015,73.5121502209131 141.2558910162003,147.0243004418262 193,160 C 244.7441089837997,172.9756995581738 277.60438144329896,125.41494845360825 344,118 C 410.39561855670104,110.58505154639175 510.32658321060387,143.3159057437408 571,147 C 631.6734167893961,150.6840942562592 653.0892857142857,125.32142857142857 704,103 C 754.9107142857143,80.67857142857143 835.3162739322535,61.39837997054491 901,80 C 966.6837260677465,98.60162002945509 1017.6456185567008,155.08505154639178 1067,167 C 1116.3543814432992,178.91494845360822 1164.1012518409427,146.26141384388808 1226,111 C 1287.8987481590573,75.73858615611194 1363.9493740795288,37.86929307805597 1440,0 L 1440,400 L 0,400 Z"
-                );
-              }
-              75% {
-                d: path(
-                  "M 0,400 L 0,0 C 75.02632547864508,61.34628129602356 150.05265095729015,122.69256259204712 210,140 C 269.94734904270985,157.30743740795288 314.81572164948454,130.576030927835 374,137 C 433.18427835051546,143.423969072165 506.6844624447717,183.0033136966127 569,203 C 631.3155375552283,222.9966863033873 682.4464285714286,223.41071428571428 739,220 C 795.5535714285714,216.58928571428572 857.5298232695139,209.35382916053018 914,194 C 970.4701767304861,178.64617083946982 1021.4342783505153,155.17396907216494 1085,170 C 1148.5657216494847,184.82603092783506 1224.7330633284241,237.95029455081 1286,216 C 1347.2669366715759,194.04970544919 1393.633468335788,97.024852724595 1440,0 L 1440,400 L 0,400 Z"
-                );
-              }
-              100% {
-                d: path(
-                  "M 0,400 L 0,0 C 45.56793078055965,28.415316642120764 91.1358615611193,56.83063328424153 150,90 C 208.8641384388807,123.16936671575847 281.02448453608247,161.09278350515464 356,162 C 430.97551546391753,162.90721649484536 508.7662002945508,126.7982326951399 568,119 C 627.2337997054492,111.2017673048601 667.9107142857142,131.71428571428572 718,165 C 768.0892857142858,198.28571428571428 827.5909425625921,244.34462444771722 895,215 C 962.4090574374079,185.65537555228278 1037.7255154639174,80.90721649484534 1098,80 C 1158.2744845360826,79.09278350515466 1203.506995581738,182.02650957290135 1258,186 C 1312.493004418262,189.97349042709865 1376.246502209131,94.98674521354933 1440,0 L 1440,400 L 0,400 Z"
-                );
-              }
-            }
-          </style>
-          <defs>
-            <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-              <stop offset="5%" stop-color="#abb8c3"></stop>
-              <stop offset="95%" stop-color="#8ED1FC"></stop>
-            </linearGradient>
-          </defs>
-          <path
-            d="M 0,400 L 0,0 C 45.56793078055965,28.415316642120764 91.1358615611193,56.83063328424153 150,90 C 208.8641384388807,123.16936671575847 281.02448453608247,161.09278350515464 356,162 C 430.97551546391753,162.90721649484536 508.7662002945508,126.7982326951399 568,119 C 627.2337997054492,111.2017673048601 667.9107142857142,131.71428571428572 718,165 C 768.0892857142858,198.28571428571428 827.5909425625921,244.34462444771722 895,215 C 962.4090574374079,185.65537555228278 1037.7255154639174,80.90721649484534 1098,80 C 1158.2744845360826,79.09278350515466 1203.506995581738,182.02650957290135 1258,186 C 1312.493004418262,189.97349042709865 1376.246502209131,94.98674521354933 1440,0 L 1440,400 L 0,400 Z"
-            stroke="none"
-            stroke-width="0"
-            fill="url(#gradient)"
-            fill-opacity="1"
-            class="transition-all duration-300 ease-in-out delay-150 path-0"
-          ></path>
-        </svg> -->
+
+        <div class="absolute right-0 z-10 bottom-3 pr-32">
+          <h1 class="text-xl text-black font1">KNOW MORE ...</h1>
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svgjs="http://svgjs.dev/svgjs"
           viewBox="0 0 2400 800"
-          class="absolute -bottom-28"
+          class="absolute -bottom-32"
         >
           <defs>
             <linearGradient
@@ -142,11 +140,7 @@
               y2="100%"
               id="sssurf-grad"
             >
-              <stop
-                stop-color="hsla(208, 2%, 80%, 1.00)"
-                stop-opacity="1"
-                offset="0%"
-              ></stop>
+              <stop stop-color="#ffffffff" stop-opacity="1" offset="0%"></stop>
               <stop
                 stop-color="hsla(0, 0%, 100%, 1.00)"
                 stop-opacity="1"
@@ -165,15 +159,460 @@
             ></path>
           </g>
         </svg>
-        <div class="absolute w-96 h-96 bottom-8 ml-32">
+      </div>
+
+      <div id="experience" class="relative w-full px-20 mt-20">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8">EXPERIENCES:</h1>
+        <div class="border-l-4 border-cyan-700">
+          <!-- First Entry -->
+
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-200 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-stone-900"
+              >
+                <span>Southeastern Louisiana University</span>
+                <span class="text-sm text-gray-700">Hammond, Louisiana</span>
+              </p>
+              <p class="flex justify-between text-md text-gray-700">
+                <span>Research & Development Team</span>
+                <span class="text-sm text-gray-700">May 2024 – Present.</span>
+              </p>
+              <ul class="list-disc pl-5 mt-3">
+                <li>
+                  Enhanced the Nexus library in RevBayes, a C++ software for
+                  phylogenetic statistical computation, to read assumption
+                  blocks in .nex files, processing previously lost data.
+                </li>
+                <li>
+                  Implemented JSON parsing in RevGadgets, a tool for importing
+                  and visualizing RevBayes output in R, enabling users to upload
+                  and process JSON files.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Second Entry -->
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-300 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-gray-800"
+              >
+                <span>Southeastern Louisiana University</span>
+                <span class="text-sm text-gray-600">Hammond, Louisiana</span>
+              </p>
+              <p class="flex justify-between text-md text-gray-600">
+                <span>Computer Science Tutor</span>
+                <span class="text-sm text-gray-500"
+                  >September 2024 – Present.</span
+                >
+              </p>
+              <ul class="list-disc pl-5 mt-3 text-gray-900">
+                <li>
+                  Provide one-on-one and group tutoring sessions to help
+                  students with computer science concepts, both in-person and
+                  online.
+                </li>
+                <li>
+                  Assist students with Computer Science coursework, applying
+                  strong subject knowledge to address their academic needs.
+                </li>
+                <li>
+                  Maintain detailed tutoring records and manage student progress
+                  through shared Google Drive, while ensuring clear and timely
+                  email communication for ongoing support.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Third Entry -->
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-200 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-gray-800"
+              >
+                <span>DXC Technology</span>
+                <span class="text-sm text-gray-700"
+                  >New Orleans, Louisiana</span
+                >
+              </p>
+              <p class="flex justify-between text-md text-gray-600">
+                <span>Technical Intern for Summer 2023</span>
+                <span class="text-sm text-gray-600">June-August 2023</span>
+              </p>
+              <ul class="list-disc pl-5 mt-3">
+                <li>
+                  Revamped UI for Data Quality Accelerator app using Angular,
+                  enhancing user experience.
+                </li>
+                <li>
+                  Improved metadata retrieval from AWS S3 buckets, boosting app
+                  performance.
+                </li>
+                <li>
+                  Engaged in daily standup calls and collaborated with fellow
+                  teammates and offshore teams.
+                </li>
+                <li>
+                  Utilized Pandas to analyze tickets data, extracting valuable
+                  insights for decision-making.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fourth Entry -->
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-300 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-gray-800"
+              >
+                <span>Southeastern Louisiana University</span>
+                <span class="text-sm text-gray-600">Hammond, Louisiana</span>
+              </p>
+              <p class="flex justify-between text-md text-gray-600">
+                <span>Mathematics Tutor</span>
+                <span class="text-sm text-gray-500"
+                  >September 2022 – May 2024</span
+                >
+              </p>
+              <ul class="list-disc pl-5 mt-3 text-gray-900">
+                <li>
+                  Facilitate development of teaching and learning strategies to
+                  help fellow students.
+                </li>
+                <li>
+                  Work one-on-one and in groups to tutor students on
+                  Mathematical concepts like Applied Algebra, Finite Mathematics
+                  and College Algebra.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fifth Entry -->
+
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-200 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-gray-800"
+              >
+                <span>Southeastern Louisiana University</span>
+                <span class="text-sm text-gray-700">Hammond, Louisiana</span>
+              </p>
+              <p class="flex justify-between text-md text-gray-600">
+                <span>Computer Lab Assistant [Garrett Hall]</span>
+                <span class="text-sm text-gray-600"
+                  >August 2022 - May 2023</span
+                >
+              </p>
+              <ul class="list-disc pl-5 mt-3">
+                <li>Enhanced the SRD Memorial Project using Ionic Angular.</li>
+
+                <li>
+                  Participated in the deployment and debugging of the web apps
+                  with Docker.
+                </li>
+                <li>
+                  Contributed to the creation of project documentation and
+                  presentation materials for client meetings.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sixth Entry -->
+          <div class="relative mb-10 pl-8">
+            <div
+              class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+            >
+              <svg
+                class="w-1/3 h-auto"
+                fill="white"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                ></path>
+              </svg>
+            </div>
+            <div class="bg-blue-300 shadow-md rounded-lg p-6 ml-6">
+              <p
+                class="flex justify-between text-xl font-semibold text-gray-800"
+              >
+                <span>IT Nepal Solutions</span>
+                <span class="text-sm text-gray-700">Kathmandu, Nepal</span>
+              </p>
+              <p class="flex justify-between text-md text-gray-600">
+                <span>Intern</span>
+                <span class="text-sm text-gray-600">Feb-July 2022</span>
+              </p>
+              <ul class="list-disc pl-5 mt-3">
+                <li>
+                  Actively participated in web app development for IT Nepal
+                  Solutions and Raman Law Associations using React, Django, CSS,
+                  and JavaScript.
+                </li>
+                <li>
+                  Created a basic portfolio website for Zeba Beauty, showcasing
+                  their services and products.
+                </li>
+                <li>
+                  Collaborated with team members in daily stand-up meetings to
+                  discuss project progress and challenges.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="projects" class="mt-32 px-14 text-white">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8">PROJECTS:</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- EEG Data Processing Project Card -->
           <div
-            class="absolute inset-0 bg-white w-96 h-96 rounded-full z-10"
-          ></div>
-          <img
-            src="./img/me.png"
-            alt="Me"
-            class="absolute inset-0 -mt-24 rounded-full z-20 h-auto w-96"
-          />
+            class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col h-full"
+          >
+            <img
+              src="./img/project.jpg"
+              alt="EEG Data Processing"
+              class="w-full h-2/3 object-cover rounded-t-lg"
+            />
+            <div class="flex flex-col flex-grow">
+              <h2 class="text-2xl font-bold text-center mt-8">
+                EEG DATA PROCESSING
+              </h2>
+              <div class="mt-auto">
+                <button
+                  onclick="togglePopup(true)"
+                  class="w-full py-1 text-white border border-white rounded-full hover:bg-white hover:text-gray-800 transition duration-300"
+                >
+                  View more...
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <p class="text-gray-400">Technologies Used: Python, Pickle</p>
+          <p
+            class="mt-2 "
+          >
+            Currently working on retrieving and processing EEG data from a
+            pickle file, applying filtering techniques to extract insights,
+            as part of an ML class.
+          </p> -->
+
+          <!-- Popup Modal -->
+          <div
+            id="popupModal"
+            class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-20"
+          >
+            <div
+              class="bg-white rounded-lg p-6 w-2/5 h-auto relative text-black"
+            >
+              <button
+                onclick="togglePopup(false)"
+                class="absolute top-1 right-1 text-3xl font-bold hover:text-gray-700"
+              >
+                &times;
+              </button>
+              <img
+                src="./img/project.jpg"
+                alt="EEG Data Processing"
+                class="w-full h-auto object-cover rounded-t-lg item-center"
+              />
+              <div class="flex flex-col flex-grow">
+                <h2 class="text-2xl font-bold text-center p-4">
+                  EEG DATA PROCESSING
+                </h2>
+                <p class="text-gray-700 mb-2">
+                  Technologies Used: Python, Pickle
+                </p>
+                <p class="text-xl">
+                  Worked on retrieving and processing EEG data from a pickle
+                  file, applying filtering techniques to extract insights, as
+                  part of an ML class.
+                </p>
+              </div>
+              <!-- <button
+                onclick="togglePopup(false)"
+                class="mt-4 w-full py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300"
+              >
+                Close
+              </button> -->
+            </div>
+          </div>
+
+          <!-- SELU Thrift Store Project Card -->
+          <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+            <img
+              src="./img/project.jpg"
+              alt="SELU Thrift Store"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-xl font-bold">SELU THRIFT STORE</h2>
+              <p class="text-gray-400">
+                Technologies Used: .NET, React TypeScript
+              </p>
+              <p class="mt-2">
+                Developed a platform utilizing .NET and React TypeScript as part
+                of a team project, enabling effortless buying and selling
+                experiences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Well Creation Project Card -->
+          <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+            <img
+              src="./img/project.jpg"
+              alt="Well Creation"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-xl font-bold">WELL CREATION</h2>
+              <p class="text-gray-400">
+                Technologies Used: HTML, CSS, JavaScript
+              </p>
+              <p class="mt-2">
+                Created an arts club portfolio website with HTML, CSS, and JS in
+                a team.
+              </p>
+            </div>
+          </div>
+
+          <!-- Courier Management System Project Card -->
+          <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+            <img
+              src="./img/project.jpg"
+              alt="Courier Management System"
+              class="w-full h-1/2 object-cover rounded-t-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-xl font-bold">COURIER MANAGEMENT SYSTEM</h2>
+              <p class="text-gray-400">Technologies Used: Java</p>
+              <p class="mt-2">
+                Designed & developed a service tracking system using Java.
+              </p>
+            </div>
+          </div>
+
+          <!-- Well Creation Project Card -->
+          <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+            <img
+              src="./img/project.jpg"
+              alt="Well Creation"
+              class="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-xl font-bold">Well Creation</h2>
+              <p class="text-gray-400">
+                Technologies Used: HTML, CSS, JavaScript
+              </p>
+              <p class="mt-2">
+                Created an arts club portfolio website with HTML, CSS, and JS in
+                a team.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

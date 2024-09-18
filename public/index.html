@@ -32,6 +32,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css"
+    />
 
     <style>
       body {
@@ -48,6 +52,21 @@
       }
       .w-88 {
         width: 22rem;
+      }
+      @keyframes marquee {
+        50% {
+          transform: translateX(-35%); /* slight bounce */
+        }
+      }
+
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .marquee-content {
+        display: inline-flex;
+        animation: marquee 20s linear infinite;
       }
     </style>
     <script defer>
@@ -159,6 +178,73 @@
             ></path>
           </g>
         </svg>
+      </div>
+
+      <div id="skills" class="p-14 rounded-lg shadow-lg overflow-hidden">
+        <!-- <h1 class="text-4xl text-center font-bold mb-10 ">MY SKILLS</h1> -->
+        <div class="marquee-container flex space-x-8 text-7xl mt-16">
+          <div class="flex items-center space-x-9 marquee-content">
+            <!-- Programming Languages -->
+            <i class="devicon-cplusplus-plain text-[#00599C]" title="C++"></i>
+            <i class="devicon-c-plain text-[#A8B400]" title="C"></i>
+            <i class="devicon-java-plain text-[#007396]" title="Java"></i>
+            <i class="devicon-python-plain text-[#3572A5]" title="Python"></i>
+            <i
+              class="devicon-typescript-plain text-[#007ACC]"
+              title="TypeScript"
+            ></i>
+
+            <!-- Web and Mobile Frameworks -->
+            <i
+              class="devicon-angularjs-plain text-[#DD0031]"
+              title="Angular"
+            ></i>
+            <i class="devicon-react-original text-[#61DAFB]" title="React"></i>
+            <i class="devicon-ionic-original text-[#3880FF]" title="Ionic"></i>
+            <i class="devicon-django-plain text-[#092E20]" title="Django"></i>
+            <i class="devicon-dotnetcore-plain text-[#512BD4]" title=".Net"></i>
+            <i class="devicon-swift-plain text-[#F05138]" title="Swift"></i>
+
+            <!-- Databases and Cloud -->
+            <i class="devicon-mysql-plain text-[#4479A1]" title="MySQL"></i>
+            <i
+              class="devicon-oracle-original text-[#F80000]"
+              title="Oracle"
+            ></i>
+            <i
+              class="devicon-firebase-plain text-[#FFCA28]"
+              title="Firebase"
+            ></i>
+            <i
+              class="devicon-amazonwebservices-plain text-[#FF9900]"
+              title="AWS"
+            ></i>
+
+            <!-- Tools and Platforms -->
+            <i class="devicon-git-plain text-[#F05032]" title="Git"></i>
+            <i class="devicon-docker-plain text-[#2496ED]" title="Docker"></i>
+            <i
+              class="devicon-visualstudio-plain text-[#5C2D91]"
+              title="Visual Studio"
+            ></i>
+            <i class="devicon-linux-plain text-[#FCC624]" title="Linux"></i>
+            <i
+              class="devicon-microsoft-plain text-[#F25022]"
+              title="Microsoft Office"
+            ></i>
+            <i class="devicon-graphql-plain text-[#E535AB]" title="GraphQL"></i>
+
+            <!-- Data Science and Analysis -->
+            <i class="devicon-numpy-original text-[#013243]" title="NumPy"></i>
+            <i class="devicon-pandas-plain text-[#150458]" title="Pandas"></i>
+            <i
+              class="devicon-tensorflow-original text-[#FF6F20]"
+              title="TensorFlow"
+            ></i>
+            <i class="devicon-jupyter-plain text-[#F37620]" title="Jupyter"></i>
+            <i class="devicon-r-original text-[#276DC3]" title="R"></i>
+          </div>
+        </div>
       </div>
 
       <div id="experience" class="relative w-full px-20 mt-20">
@@ -463,7 +549,7 @@
         </div>
       </div>
 
-      <div id="projects" class="mt-32 px-14 text-white">
+      <div id="projects" class="my-32 px-14 text-white">
         <h1 class="text-4xl font-bold text-gray-800 mb-8">PROJECTS:</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- EEG Data Processing Project Card -->

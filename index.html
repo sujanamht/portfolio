@@ -613,7 +613,21 @@
       border-radius: 10%;
     }
   </style>
+  <script>
+    // Get the video element by its ID
+    var video = document.getElementById('backgroundVideo');
 
+    // Ensure the video plays automatically
+    video.play();
+
+    // Hide controls if the controls attribute is present
+    video.controls = false;
+
+    // Ensure the video restarts when it ends
+    video.onended = function () {
+      video.play(); // Loop the video
+    };
+  </script>
 
 </body>
 

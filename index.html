@@ -1,156 +1,151 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Suzz's !!!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicon@2.13.0/devicon.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Suzz's !!!</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.13.0/devicon.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css" />
-
-  <style>
-    body {
-      overflow-x: hidden;
-    }
-
-    .font {
-      font-family: "Quintessential", serif;
-    }
-
-    .nunito {
-      font-family: "Nunito", sans-serif;
-    }
-
-    .font1 {
-      font-family: "Amita", serif;
-    }
-
-    .w-88 {
-      width: 22rem;
-    }
-
-    @keyframes marquee {
-      50% {
-        transform: translateX(-20%);
-        /* slight bounce */
-      }
-    }
-
-    @keyframes gradient-flow {
-      0% {
-        background-position: 0% 50%;
+    <style>
+      body {
+        overflow-x: hidden;
       }
 
-      50% {
-        background-position: 100% 50%;
+      .font {
+        font-family: "Quintessential", serif;
       }
 
-      100% {
-        background-position: 0% 50%;
+      .nunito {
+        font-family: "Nunito", sans-serif;
       }
-    }
 
-    .marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
-    }
+      .font1 {
+        font-family: "Amita", serif;
+      }
 
-    .marquee-content {
-      display: inline-flex;
-      animation: marquee 20s linear infinite;
-    }
+      .w-88 {
+        width: 22rem;
+      }
 
-    .marquee-container:hover .marquee-content {
-      animation-play-state: paused;
-    }
+      @keyframes marquee {
+        50% {
+          transform: translateX(-20%);
+          /* slight bounce */
+        }
+      }
 
-    /* Custom animation class for Tailwind */
-    .hover-animate-gradient:hover {
-      background-size: 200% 200%;
-      animation: gradient-flow 4s ease infinite;
-    }
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
 
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradient-flow 4s ease infinite;
-    }
-  </style>
+        50% {
+          background-position: 100% 50%;
+        }
 
-</head>
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-<body>
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
 
-  <!-- About Me Section -->
-  <div id="about-me" class="relative p-10  text-white overflow-hidden lg:hidden">
-    <!-- Video Background -->
-    <video id="backgroundVideo" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline>
-      <source src="img/mountain.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <nav class="relative top-0 mb-10 left-0 right-0 z-20 flex items-center justify-between">
-      <div class="flex space-x-8">
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-gray-400 hover:text-blue-500">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/your-username" target="_blank" class="text-gray-400 hover:text-white">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <h1 class="text-3xl font1">SUJANA</h1>
-        </a>
-      </div>
-    </nav>
+      .marquee-content {
+        display: inline-flex;
+        animation: marquee 20s linear infinite;
+      }
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+      .marquee-container:hover .marquee-content {
+        animation-play-state: paused;
+      }
 
-    <!-- Content Wrapper -->
-    <div class="relative z-20 flex flex-col sm:flex-row items-center justify-between">
-      <!-- Profile Image -->
-      <div class="w-full sm:w-1/3 flex justify-center">
-        <img src="img/me.png" alt="Sujana Mehta" class="rounded-full border-8 border-white w-48 sm:w-64" />
-      </div>
+      /* Custom animation class for Tailwind */
+      .hover-animate-gradient:hover {
+        background-size: 200% 200%;
+        animation: gradient-flow 4s ease infinite;
+      }
 
-      <!-- Text Content -->
-      <div class="w-full sm:w-2/3 mt-10 sm:mt-0 text-center sm:text-left">
-        <h1 class="text-4xl font-serif">Sujana Mehta</h1>
-        <p class="text-lg mt-4 p-10">
-          Delve into my space and enjoy your time knowing me. Here you'll find a showcase of my work, my journey in
-          learning, and the projects I've dedicated my time to.
-        </p>
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient-flow 4s ease infinite;
+      }
+    </style>
+  </head>
 
-        <!-- Contact Me Button -->
-        <div class="mt-8 mb-10">
-          <a href="#contact"
-            class="px-6 py-3 bg-blue-500 rounded-full text-white hover:bg-blue-600 transition duration-300">
-            CONTACT ME
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="nunito scroll-smooth">
-    <div id="header" class="text-white hidden lg:block">
-      <nav class="absolute top-0 left-0 right-0 p-8 z-20 flex items-center justify-between">
+  <body>
+    <!-- About Me Section -->
+    <div
+      id="about-me"
+      class="relative p-10 text-white overflow-hidden lg:hidden"
+    >
+      <!-- Video Background -->
+      <video
+        id="backgroundVideo"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        muted
+        playsinline
+      >
+        <source src="img/mountain.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <nav
+        class="relative top-0 mb-10 left-0 right-0 z-20 flex items-center justify-between"
+      >
         <div class="flex space-x-8">
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-gray-400 hover:text-blue-500">
+          <a
+            href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
+            target="_blank"
+            class="text-gray-400 hover:text-blue-500"
+          >
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
-          <a href="https://github.com/your-username" target="_blank" class="text-gray-400 hover:text-white">
+          <a
+            href="https://github.com/sujanamht"
+            target="_blank"
+            class="text-gray-400 hover:text-white"
+          >
             <i class="fab fa-github fa-2x"></i>
+          </a>
+
+          <a
+            href="mailto:suzanamht@gmail.com"
+            class="text-gray-400 hover:text-red-500"
+          >
+            <i class="fas fa-envelope fa-2x"></i>
           </a>
         </div>
         <div>
@@ -159,420 +154,810 @@
           </a>
         </div>
       </nav>
-      <div id="intro" class="">
-        <div class="absolute w-96 h-96 bottom-8 ml-32">
-          <div class="absolute inset-0 bg-white w-96 h-96 rounded-full z-10"></div>
-          <img src="./img/me.png" alt="Me" class="absolute inset-0 -mt-24 rounded-full z-20 h-auto w-96" />
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+      <!-- Content Wrapper -->
+      <div
+        class="relative z-20 flex flex-col sm:flex-row items-center justify-between"
+      >
+        <!-- Profile Image -->
+        <div class="w-full sm:w-1/3 flex justify-center">
+          <img
+            src="img/me.png"
+            alt="Sujana Mehta"
+            class="rounded-full border-8 border-white w-48 sm:w-64"
+          />
         </div>
-        <div class="absolute inset-0 bg-black opacity-80 shadow flex flex-col justify-center items-end w-full pr-32">
-          <h1 class="text-6xl mt-40 font-serif">Sujana Mehta</h1>
-          <div class="flex mt-6">
-            <p class="right-0 w-1/2 ml-auto text-right">
-              Delve into my space and enjoy your time knowing me. Here you'll
-              find a showcase of my work, my journey in learning, and the
-              projects I've dedicated my time to.
-            </p>
+
+        <!-- Text Content -->
+        <div class="w-full sm:w-2/3 mt-10 sm:mt-0 text-center sm:text-left">
+          <h1 class="text-4xl font-serif">Sujana Mehta</h1>
+          <p class="text-lg mt-4 p-10">
+            Delve into my space and enjoy your time knowing me. Here you'll find
+            a showcase of my work, my journey in learning, and the projects I've
+            dedicated my time to.
+          </p>
+
+          <!-- Contact Me Button -->
+          <div class="mt-8 mb-10">
+            <a
+              href="#contact"
+              class="px-6 py-3 bg-blue-500 rounded-full text-white hover:bg-blue-600 transition duration-300"
+            >
+              CONTACT ME
+            </a>
           </div>
-          <button
-            class="z-20 bg-[#84A7BA] mt-6 px-8 py-2 text-black border border-white font-semibold rounded-full hover:bg-white hover:text-gray-800 transition duration-300">
-            CONTACT ME
-          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nunito scroll-smooth">
+      <div id="header" class="text-white hidden lg:block">
+        <nav
+          class="absolute top-0 left-0 right-0 p-8 z-20 flex items-center justify-between"
+        >
+          <div class="flex space-x-8">
+            <a
+              href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
+              target="_blank"
+              class="text-gray-400 hover:text-blue-500"
+            >
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a
+              href="https://github.com/sujanamht"
+              target="_blank"
+              class="text-gray-400 hover:text-white"
+            >
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+
+            <a
+              href="mailto:suzanamht@gmail.com"
+              class="text-gray-400 hover:text-red-500"
+            >
+              <i class="fas fa-envelope fa-2x"></i>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <h1 class="text-3xl font1">SUJANA</h1>
+            </a>
+          </div>
+        </nav>
+        <div id="intro" class="">
+          <div class="absolute w-96 h-96 bottom-8 ml-32">
+            <div
+              class="absolute inset-0 bg-white w-96 h-96 rounded-full z-10"
+            ></div>
+            <img
+              src="./img/me.png"
+              alt="Me"
+              class="absolute inset-0 -mt-24 rounded-full z-20 h-auto w-96"
+            />
+          </div>
+          <div
+            class="absolute inset-0 bg-black opacity-80 shadow flex flex-col justify-center items-end w-full pr-32"
+          >
+            <h1 class="text-6xl mt-40 font-serif">Sujana Mehta</h1>
+            <div class="flex mt-6">
+              <p class="right-0 w-1/2 ml-auto text-right">
+                Delve into my space and enjoy your time knowing me. Here you'll
+                find a showcase of my work, my journey in learning, and the
+                projects I've dedicated my time to.
+              </p>
+            </div>
+            <button
+              class="z-20 bg-[#84A7BA] mt-6 px-8 py-2 text-black border border-white font-semibold rounded-full hover:bg-white hover:text-gray-800 transition duration-300"
+            >
+              CONTACT ME
+            </button>
+          </div>
+        </div>
+
+        <video autoplay loop muted class="w-full object-cover h-3/4">
+          <source src="./img/mountain.mp4" type="video/mp4" />
+        </video>
+
+        <div class="absolute right-0 z-10 bottom-3 pr-32 scroll-smooth">
+          <a href="#skills">
+            <h1 class="text-xl text-black font1 underline animate-bounce">
+              KNOW MORE ...
+            </h1>
+          </a>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svgjs="http://svgjs.dev/svgjs"
+          viewBox="0 0 2400 800"
+          class="absolute -bottom-32"
+        >
+          <defs>
+            <linearGradient
+              x1="50%"
+              y1="0%"
+              x2="50%"
+              y2="100%"
+              id="sssurf-grad"
+            >
+              <stop stop-color="#ffffffff" stop-opacity="1" offset="0%"></stop>
+              <stop
+                stop-color="hsla(0, 0%, 100%, 1.00)"
+                stop-opacity="1"
+                offset="100%"
+              ></stop>
+            </linearGradient>
+          </defs>
+          <g
+            fill="url(#sssurf-grad)"
+            transform="matrix(1,0,0,1,-1.936279296875,336.0922384262085)"
+          >
+            <path
+              d="M-10,10C158.75,27.5,464.58333333333337,101.08333333333333,800,94C1135.4166666666665,86.91666666666667,1266.6666666666665,-8.166666666666668,1600,-24C1933.3333333333335,-39.83333333333333,2181.25,-70.33333333333334,2400,18C2618.75,106.33333333333334,3254.1666666666665,216.25,2650,400C2045.8333333333335,583.75,156.25,795.8333333333334,-500,900"
+              transform="matrix(1,0,0,1,0,35)"
+              opacity="NaN"
+            ></path>
+          </g>
+        </svg>
+      </div>
+
+      <div
+        id="skills"
+        class="relative flex item-center px-8 py-16 font-serif overflow-hidden"
+      >
+        <!-- Add the black background layer -->
+        <div
+          class="absolute inset-0 bg-[#71c3f7] opacity-20 z-0 h-32 mt-28"
+        ></div>
+
+        <!-- Main content, placed above the background layer -->
+        <div class="relative z-10 flex">
+          <div class="flex items-center text-center">
+            <span
+              class="relative text-3xl text-black transform -rotate-90 origin-left ml-7 mt-36"
+            >
+              SKILLS
+            </span>
+          </div>
+
+          <div
+            class="marquee-container flex space-x-8 text-6xl mt-16 -ml-14 overflow-hidden"
+          >
+            <div
+              class="flex items-center space-x-9 marquee-content hover:text-7xl"
+            >
+              <!-- Programming Languages -->
+              <i class="devicon-cplusplus-plain text-[#00599C]" title="C++"></i>
+              <i class="devicon-c-plain text-[#A8B400]" title="C"></i>
+              <i class="devicon-java-plain text-[#007396]" title="Java"></i>
+              <i class="devicon-python-plain text-[#3572A5]" title="Python"></i>
+              <i
+                class="devicon-typescript-plain text-[#007ACC]"
+                title="TypeScript"
+              ></i>
+
+              <!-- Web and Mobile Frameworks -->
+              <i
+                class="devicon-angularjs-plain text-[#DD0031]"
+                title="Angular"
+              ></i>
+              <i
+                class="devicon-react-original text-[#61DAFB]"
+                title="React"
+              ></i>
+              <i
+                class="devicon-ionic-original text-[#3880FF]"
+                title="Ionic"
+              ></i>
+              <i class="devicon-django-plain text-[#092E20]" title="Django"></i>
+              <i
+                class="devicon-dotnetcore-plain text-[#512BD4]"
+                title=".Net"
+              ></i>
+              <i class="devicon-swift-plain text-[#F05138]" title="Swift"></i>
+
+              <!-- Databases and Cloud -->
+              <i class="devicon-mysql-plain text-[#4479A1]" title="MySQL"></i>
+              <i
+                class="devicon-oracle-original text-[#F80000]"
+                title="Oracle"
+              ></i>
+              <i
+                class="devicon-firebase-plain text-[#FFCA28]"
+                title="Firebase"
+              ></i>
+              <i
+                class="devicon-amazonwebservices-plain text-[#FF9900]"
+                title="AWS"
+              ></i>
+
+              <!-- Tools and Platforms -->
+              <i class="devicon-git-plain text-[#F05032]" title="Git"></i>
+              <i class="devicon-docker-plain text-[#2496ED]" title="Docker"></i>
+              <i
+                class="devicon-visualstudio-plain text-[#5C2D91]"
+                title="Visual Studio"
+              ></i>
+              <i class="devicon-linux-plain text-[#FCC624]" title="Linux"></i>
+              <i
+                class="devicon-microsoft-plain text-[#F25022]"
+                title="Microsoft Office"
+              ></i>
+              <i
+                class="devicon-graphql-plain text-[#E535AB]"
+                title="GraphQL"
+              ></i>
+
+              <!-- Data Science and Analysis -->
+              <i
+                class="devicon-numpy-original text-[#013243]"
+                title="NumPy"
+              ></i>
+              <i class="devicon-pandas-plain text-[#150458]" title="Pandas"></i>
+              <i
+                class="devicon-tensorflow-original text-[#FF6F20]"
+                title="TensorFlow"
+              ></i>
+              <i
+                class="devicon-jupyter-plain text-[#F37620]"
+                title="Jupyter"
+              ></i>
+              <i class="devicon-r-original text-[#276DC3]" title="R"></i>
+            </div>
+          </div>
         </div>
       </div>
 
-      <video autoplay loop muted class="w-full object-cover h-3/4">
-        <source src="./img/mountain.mp4" type="video/mp4" />
-      </video>
+      <div id="experience" class="relative w-full px-3 my-10 lg:px-36 lg:my-24">
+        <!-- Add the black background layer -->
+        <div class="absolute inset-0 bg-slate-200 opacity-60 z-0"></div>
 
-      <div class="absolute right-0 z-10 bottom-3 pr-32 scroll-smooth">
-        <a href="#skills">
-          <h1 class="text-xl text-black font1 underline animate-bounce">
-            KNOW MORE ...
+        <!-- Main content, placed above the background layer -->
+        <div class="relative z-10">
+          <h1 class="relative text-5xl font-serif text-gray-800 bottom-6">
+            EXPERIENCES:
           </h1>
-        </a>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2400 800" class="absolute -bottom-32">
-        <defs>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="sssurf-grad">
-            <stop stop-color="#ffffffff" stop-opacity="1" offset="0%"></stop>
-            <stop stop-color="hsla(0, 0%, 100%, 1.00)" stop-opacity="1" offset="100%"></stop>
-          </linearGradient>
-        </defs>
-        <g fill="url(#sssurf-grad)" transform="matrix(1,0,0,1,-1.936279296875,336.0922384262085)">
-          <path
-            d="M-10,10C158.75,27.5,464.58333333333337,101.08333333333333,800,94C1135.4166666666665,86.91666666666667,1266.6666666666665,-8.166666666666668,1600,-24C1933.3333333333335,-39.83333333333333,2181.25,-70.33333333333334,2400,18C2618.75,106.33333333333334,3254.1666666666665,216.25,2650,400C2045.8333333333335,583.75,156.25,795.8333333333334,-500,900"
-            transform="matrix(1,0,0,1,0,35)" opacity="NaN"></path>
-        </g>
-      </svg>
-    </div>
+          <div class="md:p-12">
+            <div class="md:border-l-4 border-[#303655]">
+              <!-- First Entry -->
 
-    <div id="skills" class="relative flex item-center px-8 py-16  font-serif overflow-hidden">
-      <!-- Add the black background layer -->
-      <div class="absolute inset-0 bg-[#71c3f7] opacity-20 z-0 h-32 mt-28"></div>
+              <div class="relative mb-10 md:pl-8">
+                <div
+                  class="hidden md:flex absolute top-0 -left-4 bg-[#303655] w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto "
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-stone-900"
+                  >
+                    <span>Southeastern Louisiana University</span>
+                    <span class="text-sm text-gray-700"
+                      >Hammond, Louisiana</span
+                    >
+                  </p>
+                  <p class="flex justify-between text-md text-gray-700">
+                    <span>Research & Development Team</span>
+                    <span class="text-sm text-gray-700"
+                      >May 2024 – Present.</span
+                    >
+                  </p>
+                  <ul class="list-disc pl-5 mt-3">
+                    <li>
+                      Enhanced the Nexus library in RevBayes, a C++ software for
+                      phylogenetic statistical computation, to read assumption
+                      blocks in .nex files, processing previously lost data.
+                    </li>
+                    <li>
+                      Implemented JSON parsing in RevGadgets, a tool for
+                      importing and visualizing RevBayes output in R, enabling
+                      users to upload and process JSON files.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Second Entry -->
+              <div class="relative mb-10 md:pl-8">
+                <div
+                  class=" hidden md:flex absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto"
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-gray-800"
+                  >
+                    <span>Southeastern Louisiana University</span>
+                    <span class="text-sm text-gray-600"
+                      >Hammond, Louisiana</span
+                    >
+                  </p>
+                  <p class="flex justify-between text-md text-gray-600">
+                    <span>Computer Science Tutor</span>
+                    <span class="text-sm text-gray-500"
+                      >September 2024 – Present.</span
+                    >
+                  </p>
+                  <ul class="list-disc pl-5 mt-3 text-gray-900">
+                    <li>
+                      Provide one-on-one and group tutoring sessions to help
+                      students with computer science concepts, both in-person
+                      and online.
+                    </li>
+                    <li>
+                      Assist students with Computer Science coursework, applying
+                      strong subject knowledge to address their academic needs.
+                    </li>
+                    <li>
+                      Maintain detailed tutoring records and manage student
+                      progress through shared Google Drive, while ensuring clear
+                      and timely email communication for ongoing support.
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-      <!-- Main content, placed above the background layer -->
-      <div class="relative z-10 flex">
-        <div class="flex items-center text-center">
-          <span class="relative text-3xl text-black transform -rotate-90 origin-left ml-7 mt-36">
-            SKILLS
-          </span>
-        </div>
+              <!-- Third Entry -->
+              <div class="relative mb-10 md:pl-8">
+                <div
+                  class="hidden md:flex absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto"
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-gray-800"
+                  >
+                    <span>DXC Technology</span>
+                    <span class="text-sm text-gray-700"
+                      >New Orleans, Louisiana</span
+                    >
+                  </p>
+                  <p class="flex justify-between text-md text-gray-600">
+                    <span>Technical Intern for Summer 2023</span>
+                    <span class="text-sm text-gray-600">June-August 2023</span>
+                  </p>
+                  <ul class="list-disc pl-5 mt-3">
+                    <li>
+                      Revamped UI for Data Quality Accelerator app using
+                      Angular, enhancing user experience.
+                    </li>
+                    <li>
+                      Improved metadata retrieval from AWS S3 buckets, boosting
+                      app performance.
+                    </li>
+                    <li>
+                      Engaged in daily standup calls and collaborated with
+                      fellow teammates and offshore teams.
+                    </li>
+                    <li>
+                      Utilized Pandas to analyze tickets data, extracting
+                      valuable insights for decision-making.
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-        <div class="marquee-container flex space-x-8 text-6xl mt-16 -ml-14 overflow-hidden">
-          <div class="flex items-center space-x-9 marquee-content hover:text-7xl">
-            <!-- Programming Languages -->
-            <i class="devicon-cplusplus-plain text-[#00599C]" title="C++"></i>
-            <i class="devicon-c-plain text-[#A8B400]" title="C"></i>
-            <i class="devicon-java-plain text-[#007396]" title="Java"></i>
-            <i class="devicon-python-plain text-[#3572A5]" title="Python"></i>
-            <i class="devicon-typescript-plain text-[#007ACC]" title="TypeScript"></i>
+              <!-- Fourth Entry -->
+              <div class="relative mb-10 md:pl-8">
+                <div
+                  class="hidden md:flex absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto"
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-gray-800"
+                  >
+                    <span>Southeastern Louisiana University</span>
+                    <span class="text-sm text-gray-600"
+                      >Hammond, Louisiana</span
+                    >
+                  </p>
+                  <p class="flex justify-between text-md text-gray-600">
+                    <span>Mathematics Tutor</span>
+                    <span class="text-sm text-gray-500"
+                      >September 2022 – May 2024</span
+                    >
+                  </p>
+                  <ul class="list-disc pl-5 mt-3 text-gray-900">
+                    <li>
+                      Facilitate development of teaching and learning strategies
+                      to help fellow students.
+                    </li>
+                    <li>
+                      Work one-on-one and in groups to tutor students on
+                      Mathematical concepts like Applied Algebra, Finite
+                      Mathematics and College Algebra.
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-            <!-- Web and Mobile Frameworks -->
-            <i class="devicon-angularjs-plain text-[#DD0031]" title="Angular"></i>
-            <i class="devicon-react-original text-[#61DAFB]" title="React"></i>
-            <i class="devicon-ionic-original text-[#3880FF]" title="Ionic"></i>
-            <i class="devicon-django-plain text-[#092E20]" title="Django"></i>
-            <i class="devicon-dotnetcore-plain text-[#512BD4]" title=".Net"></i>
-            <i class="devicon-swift-plain text-[#F05138]" title="Swift"></i>
+              <!-- Fifth Entry -->
 
-            <!-- Databases and Cloud -->
-            <i class="devicon-mysql-plain text-[#4479A1]" title="MySQL"></i>
-            <i class="devicon-oracle-original text-[#F80000]" title="Oracle"></i>
-            <i class="devicon-firebase-plain text-[#FFCA28]" title="Firebase"></i>
-            <i class="devicon-amazonwebservices-plain text-[#FF9900]" title="AWS"></i>
+              <div class="relative mb-10 md:pl-8">
+                <div
+                  class="hidden md:flex absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto"
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-gray-800"
+                  >
+                    <span>Southeastern Louisiana University</span>
+                    <span class="text-sm text-gray-700"
+                      >Hammond, Louisiana</span
+                    >
+                  </p>
+                  <p class="flex justify-between text-md text-gray-600">
+                    <span>Computer Lab Assistant [Garrett Hall]</span>
+                    <span class="text-sm text-gray-600"
+                      >August 2022 - May 2023</span
+                    >
+                  </p>
+                  <ul class="list-disc pl-5 mt-3">
+                    <li>
+                      Enhanced the SRD Memorial Project using Ionic Angular.
+                    </li>
 
-            <!-- Tools and Platforms -->
-            <i class="devicon-git-plain text-[#F05032]" title="Git"></i>
-            <i class="devicon-docker-plain text-[#2496ED]" title="Docker"></i>
-            <i class="devicon-visualstudio-plain text-[#5C2D91]" title="Visual Studio"></i>
-            <i class="devicon-linux-plain text-[#FCC624]" title="Linux"></i>
-            <i class="devicon-microsoft-plain text-[#F25022]" title="Microsoft Office"></i>
-            <i class="devicon-graphql-plain text-[#E535AB]" title="GraphQL"></i>
+                    <li>
+                      Participated in the deployment and debugging of the web
+                      apps with Docker.
+                    </li>
+                    <li>
+                      Contributed to the creation of project documentation and
+                      presentation materials for client meetings.
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-            <!-- Data Science and Analysis -->
-            <i class="devicon-numpy-original text-[#013243]" title="NumPy"></i>
-            <i class="devicon-pandas-plain text-[#150458]" title="Pandas"></i>
-            <i class="devicon-tensorflow-original text-[#FF6F20]" title="TensorFlow"></i>
-            <i class="devicon-jupyter-plain text-[#F37620]" title="Jupyter"></i>
-            <i class="devicon-r-original text-[#276DC3]" title="R"></i>
+              <!-- Sixth Entry -->
+              <div class="relative mb-20 md:pl-8">
+                <div
+                  class="hidden md:flex absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white"
+                >
+                  <svg
+                    class="w-1/3 h-auto"
+                    fill="white"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
+                >
+                  <p
+                    class="flex justify-between text-xl font-semibold text-gray-800"
+                  >
+                    <span>IT Nepal Solutions</span>
+                    <span class="text-sm text-gray-700">Kathmandu, Nepal</span>
+                  </p>
+                  <p class="flex justify-between text-md text-gray-600">
+                    <span>Intern</span>
+                    <span class="text-sm text-gray-600">Feb-July 2022</span>
+                  </p>
+                  <ul class="list-disc pl-5 mt-3">
+                    <li>
+                      Actively participated in web app development for IT Nepal
+                      Solutions and Raman Law Associations using React, Django,
+                      CSS, and JavaScript.
+                    </li>
+                    <li>
+                      Created a basic portfolio website for Zeba Beauty,
+                      showcasing their services and products.
+                    </li>
+                    <li>
+                      Collaborated with team members in daily stand-up meetings
+                      to discuss project progress and challenges.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div id="experience" class="relative w-full pl-3 lg:px-36 lg:my-24">
+    <div id="project" class="relative w-full pl-3  lg:px-36 lg:my-24">
       <!-- Add the black background layer -->
       <div class="absolute inset-0 bg-slate-200 opacity-60 z-0"></div>
 
       <!-- Main content, placed above the background layer -->
       <div class="relative z-10">
-        <h1 class="relative  text-5xl font-serif text-gray-800 bottom-6  ">
-          EXPERIENCES:
+        <h1 class="relative text-5xl font-serif text-gray-800 bottom-6">
+          PROJECTS:
         </h1>
-        <div class="p-12 ">
-          <div class="border-l-4 border-[#303655]">
-            <!-- First Entry -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 mt-3"
+        >
+          <!-- Project Cards -->
+          <div
+            class="project-card"
+            data-title="EEG DATA PROCESSING"
+            data-description="Worked on retrieving and processing EEG data from a pickle file, applying filtering techniques to extract insights, as part of an ML class."
+            data-technologies="Python, Pickle"
+            data-img="./img/project.jpg"
+          ></div>
+          <div
+            class="project-card"
+            data-title="SELU THRIFT STORE"
+            data-description="Developed a platform utilizing .NET and React TypeScript as part of a team project, enabling effortless buying and selling experiences."
+            data-technologies=".NET, React TypeScript"
+            data-img="./img/project.jpg"
+          ></div>
+          <div
+            class="project-card"
+            data-title="WELL CREATION"
+            data-description="Created an arts club portfolio website with HTML, CSS, and JS in a team."
+            data-technologies="HTML, CSS, JavaScript"
+            data-img="./img/project.jpg"
+          ></div>
+          <div
+            class="project-card"
+            data-title="COURIER MANAGEMENT SYSTEM"
+            data-description="Designed & developed a service tracking system using Java."
+            data-technologies="Java"
+            data-img="./img/project.jpg"
+          ></div>
+        </div>
+      </div>
 
-            <div class="relative mb-10 pl-8">
+      <!-- Popup Modal -->
+      <div
+        id="popupModal"
+        class="fixed inset-0 bg-black text-white bg-opacity-80 flex items-center justify-center hidden z-20"
+      >
+        <div
+          class="bg-white rounded-lg m-5 mt-[-100px] lg:mt-0 w-full sm:w-2/3 md:w-2/5 h-auto relative text-black shadow-lg overflow-y-auto"
+          style="max-height: 80vh"
+        >
+          <button
+            onclick="togglePopup(false)"
+            class="close-btn fixed text-3xl font-bold hover:text-gray-700 px-2 py-4 z-30"
+          >
+            &times;
+          </button>
+          <img
+            id="popupImg"
+            src=""
+            alt="Project Image"
+            class="w-full h-auto px-6 pt-9 rounded-t-lg"
+          />
+          <div class="flex flex-col flex-grow p-5">
+            <h2 id="popupTitle" class="text-xl font-bold"></h2>
+            <p id="popupTechnologies" class="text-gray-700 my-2"></p>
+            <p id="popupDescription" class="text-lg"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="mt-32 bg-slate-100 px-6 md:px-14 text-white">
+      <h1 class="relative text-5xl font-serif text-gray-800 bottom-6 px-18">
+        CONTACT ME:
+      </h1>
+      <div class="flex flex-col md:flex-row justify-between">
+        <!-- Form section takes 100% on small screens and 50% width on larger screens -->
+        <div id="form" class="w-3/4 md:w-1/2 m-10 md:m-20">
+          <p class="text-center text-gray-600 mb-8">
+            I'd love to hear from you!
+          </p>
+
+          <div
+            class="max-w-lg mx-auto rounded-lg shadow-lg p-8 bg-white text-black"
+          >
+            <form id="contactForm" class="space-y-4">
               <div
-                class="absolute top-0 -left-4 bg-[#303655] w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
+                class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-3"
+              >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  placeholder="Your Email"
+                  required
+                />
               </div>
-              <div
-                class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-stone-900">
-                  <span>Southeastern Louisiana University</span>
-                  <span class="text-sm text-gray-700">Hammond, Louisiana</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-700">
-                  <span>Research & Development Team</span>
-                  <span class="text-sm text-gray-700">May 2024 – Present.</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3">
-                  <li>
-                    Enhanced the Nexus library in RevBayes, a C++ software for
-                    phylogenetic statistical computation, to read assumption
-                    blocks in .nex files, processing previously lost data.
-                  </li>
-                  <li>
-                    Implemented JSON parsing in RevGadgets, a tool for
-                    importing and visualizing RevBayes output in R, enabling
-                    users to upload and process JSON files.
-                  </li>
-                </ul>
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
               </div>
+              <div>
+                <button
+                  type="submit"
+                  class="w-full bg-slate-500 text-white rounded-lg py-2 font-medium hover:bg-blue-600 transition duration-300"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Social media section with responsive layout -->
+        <div
+          class="w-3/4 md:w-1/2 flex flex-col items-center m-10 md:m-20 border-l-0 md:border-l-4 border-gray-700 pl-0 md:pl-4"
+        >
+          <h4 class="text-gray-500 text-3xl md:m-8">- or find me here:</h4>
+          <div class="flex flex-col space-y-6 mt-8">
+            <div class="flex space-x-4 items-center">
+              <a
+                href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
+                target="_blank"
+                class="text-gray-800 hover:text-blue-500"
+              >
+                <i class="fab fa-linkedin fa-3x"></i>
+              </a>
+              <p class="mt-2">
+                <a
+                  href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
+                  target="_blank"
+                  class="text-sm text-gray-400 hover:text-black"
+                >
+                  linkedin.com/in/sujana-mehta-924bb0260/
+                </a>
+              </p>
             </div>
-            <!-- Second Entry -->
-            <div class="relative mb-10 pl-8">
-              <div
-                class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
-              </div>
-              <div class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7]
-                shadow-md rounded-lg p-6 ml-6 hover-animate-gradient
-                transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-gray-800">
-                  <span>Southeastern Louisiana University</span>
-                  <span class="text-sm text-gray-600">Hammond, Louisiana</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-600">
-                  <span>Computer Science Tutor</span>
-                  <span class="text-sm text-gray-500">September 2024 – Present.</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3 text-gray-900">
-                  <li>
-                    Provide one-on-one and group tutoring sessions to help
-                    students with computer science concepts, both in-person and
-                    online.
-                  </li>
-                  <li>
-                    Assist students with Computer Science coursework, applying
-                    strong subject knowledge to address their academic needs.
-                  </li>
-                  <li>
-                    Maintain detailed tutoring records and manage student
-                    progress through shared Google Drive, while ensuring clear
-                    and timely email communication for ongoing support.
-                  </li>
-                </ul>
-              </div>
+            <div class="flex space-x-4 items-center">
+              <a
+                href="https://github.com/sujanamht"
+                target="_blank"
+                class="text-gray-800 hover:text-white"
+              >
+                <i class="fab fa-github fa-3x"></i>
+              </a>
+              <p class="mt-2">
+                <a
+                  href="https://github.com/sujanamht"
+                  target="_blank"
+                  class="text-sm text-gray-400 hover:text-black"
+                >
+                  github.com/sujanamht
+                </a>
+              </p>
             </div>
-
-            <!-- Third Entry -->
-            <div class="relative mb-10 pl-8">
-              <div
-                class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
-              </div>
-              <div
-                class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-gray-800">
-                  <span>DXC Technology</span>
-                  <span class="text-sm text-gray-700">New Orleans, Louisiana</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-600">
-                  <span>Technical Intern for Summer 2023</span>
-                  <span class="text-sm text-gray-600">June-August 2023</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3">
-                  <li>
-                    Revamped UI for Data Quality Accelerator app using Angular,
-                    enhancing user experience.
-                  </li>
-                  <li>
-                    Improved metadata retrieval from AWS S3 buckets, boosting
-                    app performance.
-                  </li>
-                  <li>
-                    Engaged in daily standup calls and collaborated with fellow
-                    teammates and offshore teams.
-                  </li>
-                  <li>
-                    Utilized Pandas to analyze tickets data, extracting valuable
-                    insights for decision-making.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Fourth Entry -->
-            <div class="relative mb-10 pl-8">
-              <div
-                class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
-              </div>
-              <div class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7]
-              shadow-md rounded-lg p-6 ml-6 hover-animate-gradient
-              transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-gray-800">
-                  <span>Southeastern Louisiana University</span>
-                  <span class="text-sm text-gray-600">Hammond, Louisiana</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-600">
-                  <span>Mathematics Tutor</span>
-                  <span class="text-sm text-gray-500">September 2022 – May 2024</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3 text-gray-900">
-                  <li>
-                    Facilitate development of teaching and learning strategies
-                    to help fellow students.
-                  </li>
-                  <li>
-                    Work one-on-one and in groups to tutor students on
-                    Mathematical concepts like Applied Algebra, Finite
-                    Mathematics and College Algebra.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Fifth Entry -->
-
-            <div class="relative mb-10 pl-8">
-              <div
-                class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
-              </div>
-              <div
-                class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-gray-800">
-                  <span>Southeastern Louisiana University</span>
-                  <span class="text-sm text-gray-700">Hammond, Louisiana</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-600">
-                  <span>Computer Lab Assistant [Garrett Hall]</span>
-                  <span class="text-sm text-gray-600">August 2022 - May 2023</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3">
-                  <li>
-                    Enhanced the SRD Memorial Project using Ionic Angular.
-                  </li>
-
-                  <li>
-                    Participated in the deployment and debugging of the web apps
-                    with Docker.
-                  </li>
-                  <li>
-                    Contributed to the creation of project documentation and
-                    presentation materials for client meetings.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Sixth Entry -->
-            <div class="relative mb-10 pl-8">
-              <div
-                class="absolute top-0 -left-4 bg-blue-950 w-8 h-8 rounded-full flex items-center justify-center text-white">
-                <svg class="w-1/3 h-auto" fill="white" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z">
-                  </path>
-                </svg>
-              </div>
-              <div class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7]
-              shadow-md rounded-lg p-6 ml-6 hover-animate-gradient
-              transition-all duration-500">
-                <p class="flex justify-between text-xl font-semibold text-gray-800">
-                  <span>IT Nepal Solutions</span>
-                  <span class="text-sm text-gray-700">Kathmandu, Nepal</span>
-                </p>
-                <p class="flex justify-between text-md text-gray-600">
-                  <span>Intern</span>
-                  <span class="text-sm text-gray-600">Feb-July 2022</span>
-                </p>
-                <ul class="list-disc pl-5 mt-3">
-                  <li>
-                    Actively participated in web app development for IT Nepal
-                    Solutions and Raman Law Associations using React, Django,
-                    CSS, and JavaScript.
-                  </li>
-                  <li>
-                    Created a basic portfolio website for Zeba Beauty,
-                    showcasing their services and products.
-                  </li>
-                  <li>
-                    Collaborated with team members in daily stand-up meetings to
-                    discuss project progress and challenges.
-                  </li>
-                </ul>
-              </div>
+            <div class="flex space-x-4 items-center">
+              <a
+                href="mailto:suzanamht@gmail.com"
+                class="text-gray-800 hover:text-red-500"
+              >
+                <i class="fas fa-envelope fa-3x"></i>
+              </a>
+              <p class="mt-2">
+                <a
+                  href="mailto:suzanamht@gmail.com"
+                  class="text-sm text-gray-400 hover:text-black"
+                >
+                  suzanamht@gmail.com
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="project" class="relative w-full pl-3 lg:px-36 lg:my-24">
-    <!-- Add the black background layer -->
-    <div class="absolute inset-0 bg-slate-200 opacity-60 z-0"></div>
 
-    <!-- Main content, placed above the background layer -->
-    <div class="relative z-10">
-      <h1 class="relative  text-5xl font-serif text-gray-800 bottom-6  ">
-        PROJECTS:
-      </h1>
-      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 mt-3">
-        <!-- Project Cards -->
-        <div class="project-card" data-title="EEG DATA PROCESSING"
-          data-description="Worked on retrieving and processing EEG data from a pickle file, applying filtering techniques to extract insights, as part of an ML class."
-          data-technologies="Python, Pickle" data-img="./img/project.jpg"></div>
-        <div class="project-card" data-title="SELU THRIFT STORE"
-          data-description="Developed a platform utilizing .NET and React TypeScript as part of a team project, enabling effortless buying and selling experiences."
-          data-technologies=".NET, React TypeScript" data-img="./img/project.jpg"></div>
-        <div class="project-card" data-title="WELL CREATION"
-          data-description="Created an arts club portfolio website with HTML, CSS, and JS in a team."
-          data-technologies="HTML, CSS, JavaScript" data-img="./img/project.jpg"></div>
-        <div class="project-card" data-title="COURIER MANAGEMENT SYSTEM"
-          data-description="Designed & developed a service tracking system using Java." data-technologies="Java"
-          data-img="./img/project.jpg"></div>
-      </div>
-    </div>
+    <script defer>
+      const projectCards = document.querySelectorAll(".project-card");
+      const popup = document.getElementById("popupModal");
+      const popupTitle = document.getElementById("popupTitle");
+      const popupTechnologies = document.getElementById("popupTechnologies");
+      const popupDescription = document.getElementById("popupDescription");
+      const popupImg = document.getElementById("popupImg");
 
-    <!-- Popup Modal -->
-    <div id="popupModal"
-      class="fixed inset-0 bg-black text-white bg-opacity-80 flex items-center justify-center hidden z-20">
-      <div
-        class="bg-white rounded-lg m-5 mt-[-100px] lg:mt-0 w-full sm:w-2/3 md:w-2/5 h-auto relative text-black shadow-lg overflow-y-auto"
-        style="max-height: 80vh;">
-        <button onclick="togglePopup(false)"
-          class="close-btn fixed text-3xl font-bold hover:text-gray-700 px-2 py-4 z-30">
-          &times;
-        </button>
-        <img id="popupImg" src="" alt="Project Image" class="w-full h-auto px-6 pt-9 rounded-t-lg" />
-        <div class="flex flex-col flex-grow p-5">
-          <h2 id="popupTitle" class="text-xl font-bold"></h2>
-          <p id="popupTechnologies" class="text-gray-700 my-2"></p>
-          <p id="popupDescription" class="text-lg"></p>
-        </div>
-      </div>
-    </div>
-  </div>
+      // Initialize project cards with data from attributes
+      projectCards.forEach((card) => {
+        const title = card.getAttribute("data-title");
+        const description = card.getAttribute("data-description");
+        const technologies = card.getAttribute("data-technologies");
+        const imgSrc = card.getAttribute("data-img");
 
-  <script defer>
-    const projectCards = document.querySelectorAll('.project-card');
-    const popup = document.getElementById('popupModal');
-    const popupTitle = document.getElementById('popupTitle');
-    const popupTechnologies = document.getElementById('popupTechnologies');
-    const popupDescription = document.getElementById('popupDescription');
-    const popupImg = document.getElementById('popupImg');
-
-    // Initialize project cards with data from attributes
-    projectCards.forEach(card => {
-      const title = card.getAttribute('data-title');
-      const description = card.getAttribute('data-description');
-      const technologies = card.getAttribute('data-technologies');
-      const imgSrc = card.getAttribute('data-img');
-
-      card.innerHTML = `
+        card.innerHTML = `
             <div class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col h-full">
                 <img src="${imgSrc}" alt="${title}" class="w-full h-56 sm:h-64 object-cover rounded-t-lg" />
                 <div class="flex flex-col flex-grow">
@@ -585,50 +970,48 @@
                 </div>
             </div>
         `;
-    });
+      });
 
-    function openPopup(title, description, technologies, imgSrc) {
-      popupTitle.textContent = title;
-      popupDescription.textContent = description;
-      popupTechnologies.textContent = `Technologies Used: ${technologies}`;
-      popupImg.src = imgSrc;
-      togglePopup(true);
-    }
-
-    function togglePopup(show) {
-      if (show) {
-        popup.classList.remove('hidden');
-      } else {
-        popup.classList.add('hidden');
+      function openPopup(title, description, technologies, imgSrc) {
+        popupTitle.textContent = title;
+        popupDescription.textContent = description;
+        popupTechnologies.textContent = `Technologies Used: ${technologies}`;
+        popupImg.src = imgSrc;
+        togglePopup(true);
       }
-    }
-  </script>
 
-  <style>
-    .close-btn {
-      top: 14px;
-      right: 20px;
-      cursor: pointer;
-      background-color: white;
-      border-radius: 10%;
-    }
-  </style>
-  <script>
-    // Get the video element by its ID
-    var video = document.getElementById('backgroundVideo');
+      function togglePopup(show) {
+        if (show) {
+          popup.classList.remove("hidden");
+        } else {
+          popup.classList.add("hidden");
+        }
+      }
+    </script>
 
-    // Ensure the video plays automatically
-    video.play();
+    <style>
+      .close-btn {
+        top: 14px;
+        right: 20px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 10%;
+      }
+    </style>
+    <script>
+      // Get the video element by its ID
+      var video = document.getElementById("backgroundVideo");
 
-    // Hide controls if the controls attribute is present
-    video.controls = false;
+      // Ensure the video plays automatically
+      video.play();
 
-    // Ensure the video restarts when it ends
-    video.onended = function () {
-      video.play(); // Loop the video
-    };
-  </script>
+      // Hide controls if the controls attribute is present
+      video.controls = false;
 
-</body>
-
+      // Ensure the video restarts when it ends
+      video.onended = function () {
+        video.play(); // Loop the video
+      };
+    </script>
+  </body>
 </html>

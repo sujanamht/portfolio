@@ -841,10 +841,38 @@
             I'd love to hear from you!
           </p>
 
+          <!-- Thank You Message (hidden by default) -->
+          <div
+            id="thankYouMsg"
+            class="hidden max-w-lg mx-auto rounded-lg shadow-lg p-8 bg-green-100 text-green-800 text-center mb-4"
+          >
+            <div class="mb-4">
+              <i class="fas fa-check-circle text-4xl text-green-600 mb-2"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Thanks for your message!</h3>
+            <p class="mb-4">I'll be in touch soon.</p>
+            <button
+              id="sendAnotherBtn"
+              class="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition duration-300"
+            >
+              Send Another Message
+            </button>
+          </div>
+
           <div
             class="max-w-lg mx-auto rounded-lg shadow-lg p-8 bg-white text-black"
           >
-            <form id="contactForm" class="space-y-4">
+            <form
+              id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="space-y-4"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="c7d23137-f810-47f6-b01a-babb034fa00c"
+              />
               <div
                 class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-3"
               >
@@ -941,7 +969,7 @@
                   href="mailto:suzanamht@gmail.com"
                   class="text-sm text-gray-400 hover:text-black"
                 >
-                  suzanamht@gmail.com
+                  sujanamehta@gmail.com
                 </a>
               </p>
             </div>
@@ -1020,6 +1048,74 @@
       video.onended = function () {
         video.play(); // Loop the video
       };
+
+      // Handle contact form submission with AJAX
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalButtonText = submitButton.textContent;
+
+          // Show loading state
+          submitButton.textContent = "Sending...";
+          submitButton.disabled = true;
+
+          try {
+            const data = new FormData(form);
+            const res = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: data,
+            });
+            const json = await res.json();
+
+            if (json.success) {
+              // Hide the form and show thank you message
+              form.parentNode.classList.add("hidden");
+              document.getElementById("thankYouMsg").classList.remove("hidden");
+
+              // Scroll to thank you message
+              document.getElementById("thankYouMsg").scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            } else {
+              alert("Oops—there was an error. Please try again.");
+              // Reset button state
+              submitButton.textContent = originalButtonText;
+              submitButton.disabled = false;
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Oops—there was an error. Please try again.");
+            // Reset button state
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+          }
+        });
+
+      // Handle "Send Another Message" button click
+      document
+        .getElementById("sendAnotherBtn")
+        .addEventListener("click", function () {
+          // Hide thank you message
+          document.getElementById("thankYouMsg").classList.add("hidden");
+
+          // Show the form again
+          document
+            .getElementById("contactForm")
+            .parentNode.classList.remove("hidden");
+
+          // Reset the form fields
+          document.getElementById("contactForm").reset();
+
+          // Scroll back to the form
+          document.getElementById("contactForm").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        });
     </script>
   </body>
 </html>

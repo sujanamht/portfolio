@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Suzz's !!!</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- React CDN for islands -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,59 +45,41 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css"
     />
 
     <style>
-      body {
-        overflow-x: hidden;
-      }
-
-      .font {
-        font-family: "Quintessential", serif;
-      }
-
-      .nunito {
-        font-family: "Nunito", sans-serif;
-      }
-
-      .font1 {
-        font-family: "Amita", serif;
-      }
-
-      .w-88 {
-        width: 22rem;
+      /* Color Variables - Easy to change primary and secondary colors */
+      :root {
+        --primary-blue: #1e40af; /* Main blue */
+        --primary-blue-light: #99c5f8; /* Lighter blue */
+        --primary-blue-dark: #192853; /* Darker blue */
+        --secondary-blue: #5c7f8f; /* Secondary blue */
+        --secondary-blue-light: #99b6c4; /* Light secondary blue */
+        --secondary-blue-dark: #516874; /* Dark secondary blue */
+        --accent-blue: #dd6e42; /* Accent blue */
+        --blue-50: #eff6ff;
+        --blue-100: #dbeafe;
+        --blue-200: #bfdbfe;
+        --blue-300: #93c5fd;
+        --blue-400: #60a5fa;
+        --blue-500: #3b82f6;
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --blue-800: #1e40af;
+        --blue-900: #1e3a8a;
+        --blue-950: #172554;
+        --body-color: #eaeaea;
       }
 
       @keyframes marquee {
         50% {
           transform: translateX(-20%);
-          /* slight bounce */
         }
-      }
-
-      @keyframes gradient-flow {
-        0% {
-          background-position: 0% 50%;
-        }
-
-        50% {
-          background-position: 100% 50%;
-        }
-
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .marquee-container {
-        overflow: hidden;
-        white-space: nowrap;
       }
 
       .marquee-content {
-        display: inline-flex;
         animation: marquee 20s linear infinite;
       }
 
@@ -93,250 +87,435 @@
         animation-play-state: paused;
       }
 
-      /* Custom animation class for Tailwind */
-      .hover-animate-gradient:hover {
-        background-size: 200% 200%;
-        animation: gradient-flow 4s ease infinite;
+      /* Modern gradient backgrounds */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--secondary-blue) 50%,
+          var(--accent-blue) 100%
+        );
       }
 
-      .animate-gradient {
-        background-size: 200% 200%;
-        animation: gradient-flow 4s ease infinite;
+      .card-gradient {
+        background: linear-gradient(145deg, #ffffff 0%, var(--blue-50) 100%);
+      }
+
+      .button-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--primary-blue-light) 100%
+        );
+      }
+
+      .button-gradient:hover {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue-dark) 0%,
+          var(--primary-blue) 100%
+        );
+      }
+
+      /* Modern shadows and effects */
+      .modern-shadow {
+        box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.1),
+          0 10px 10px -5px rgba(30, 64, 175, 0.04);
+      }
+
+      .modern-shadow-lg {
+        box-shadow: 0 20px 25px -5px rgba(30, 64, 175, 0.1),
+          0 10px 10px -5px rgba(30, 64, 175, 0.04);
+      }
+
+      /* Smooth transitions */
+      .smooth-transition {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Modern border radius */
+      .modern-radius {
+        border-radius: 1rem;
+      }
+
+      .modern-radius-lg {
+        border-radius: 1.5rem;
+      }
+
+      .font1 {
+        font-family: "Amita", serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Cinzel Decorative", serif;
+      }
+      body {
+        font-family: "Merriweather", serif;
       }
     </style>
   </head>
 
-  <body>
-    <!-- About Me Section -->
-    <div
-      id="about-me"
-      class="relative p-10 text-white overflow-hidden lg:hidden"
-    >
-      <!-- Video Background -->
-      <video
-        id="backgroundVideo"
-        class="absolute inset-0 w-full h-full object-cover z-0"
-        muted
-        playsinline
-      >
-        <source src="img/mountain.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  <body class="bg-[var(--body-color)] overflow-x-hidden">
+    <!-- Main Grid Container -->
+    <div class="min-h-screen gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4">
+      <!-- Navigation Section -->
       <nav
-        class="relative top-0 mb-10 left-0 right-0 z-20 flex items-center justify-between"
+        class="col-span-1 lg:col-span-2 row-start-1 card-gradient rounded-lg modern-shadow p-2 sm:p-3 mx-2 sm:mx-3 md:mx-5 flex flex-col sm:flex-row items-center justify-between smooth-transition gap-2 sm:gap-0"
       >
-        <div class="flex space-x-8">
+        <div class="flex space-x-3 sm:space-x-4 md:space-x-6">
           <a
             href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
             target="_blank"
-            class="text-gray-400 hover:text-blue-500"
+            class="hover:text-blue-400 text-[var(--primary-blue)] smooth-transition"
           >
-            <i class="fab fa-linkedin fa-2x"></i>
+            <i class="fab fa-linkedin text-lg sm:text-xl md:text-2xl"></i>
           </a>
           <a
             href="https://github.com/sujanamht"
             target="_blank"
-            class="text-gray-400 hover:text-white"
+            class="hover:text-gray-400 smooth-transition"
           >
-            <i class="fab fa-github fa-2x"></i>
+            <i class="fab fa-github text-lg sm:text-xl md:text-2xl"></i>
           </a>
-
           <a
             href="mailto:suzanamht@gmail.com"
-            class="text-gray-400 hover:text-red-500"
+            class="hover:text-red-600 text-[var(--accent-blue)] smooth-transition"
           >
-            <i class="fas fa-envelope fa-2x"></i>
+            <i class="fas fa-envelope text-lg sm:text-xl md:text-2xl"></i>
           </a>
         </div>
         <div>
-          <a href="#">
-            <h1 class="text-3xl font1">SUJANA</h1>
-          </a>
+          <h1
+            class="text-xl sm:text-2xl md:text-3xl font1 text-[var(--primary-blue)] celtic font-bold"
+          >
+            SUJANA
+          </h1>
         </div>
       </nav>
 
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-
-      <!-- Content Wrapper -->
+      <!-- Hero Section -->
+      <!-- ===== MAIN SECTION ===== -->
       <div
-        class="relative z-20 flex flex-col sm:flex-row items-center justify-between"
+        class="relative min-h-[90vh] text-white p-2 sm:p-3 md:p-5 grid grid-rows-[3fr_2fr] gap-2 sm:gap-3 md:gap-4 modern-radius-lg"
       >
-        <!-- Profile Image -->
-        <div class="w-full sm:w-1/3 flex justify-center">
-          <img
-            src="img/me.png"
-            alt="Sujana Mehta"
-            class="rounded-full border-8 border-white w-48 sm:w-64"
-          />
+        <!-- Floating 3-pill strip (top-right, over the top row) -->
+        <div
+          class="absolute top-1 bg-[var(--body-color)] right-1 modern-radius p-2 sm:p-3 md:p-5 m-1 sm:m-2 md:m-3 z-30"
+        >
+          <div
+            class="flex items-center gap-1 sm:gap-2 md:gap-3 flex-wrap justify-end text-sm sm:text-base md:text-xl"
+          >
+            <a
+              href="#data-science"
+              class="px-2 sm:px-4 md:px-6 py-1 sm:py-2 md:py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-bold border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)] text-xs sm:text-sm md:text-base"
+              >Data Science</a
+            >
+            <a
+              href="#software-developer"
+              class="px-2 sm:px-3 md:px-5 py-1 sm:py-2 md:py-3 modern-radius-lg bg-white/90 text-[var(--secondary-blue-dark)] font-bold border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)] text-xs sm:text-sm md:text-base"
+              >Software Developer</a
+            >
+          </div>
         </div>
 
-        <!-- Text Content -->
-        <div class="w-full sm:w-2/3 mt-10 sm:mt-0 text-center sm:text-left">
-          <h1 class="text-4xl font-serif">Sujana Mehta</h1>
-          <p class="text-lg mt-4 p-10">
-            Delve into my space and enjoy your time knowing me. Here you'll find
-            a showcase of my work, my journey in learning, and the projects I've
-            dedicated my time to.
-          </p>
-
-          <!-- Contact Me Button -->
-          <div class="mt-8 mb-10 z-50">
-            <a
-              href="#contact"
-              class="px-6 py-3 bg-blue-500 rounded-full text-white hover:bg-blue-600 transition duration-300"
+        <!-- ===== Top (60%) ===== -->
+        <div class="h-full">
+          <!-- Left: Intro with video background ONLY here -->
+          <div
+            class="relative col-span-12 lg:col-span-9 rounded-2xl overflow-hidden h-full"
+          >
+            <video
+              id="backgroundVideo"
+              class="absolute inset-0 w-full h-full object-cover object-top"
+              autoplay
+              loop
+              muted
+              playsinline
             >
-              CONTACT ME
-            </a>
+              <source src="img/mountain.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-black/70"></div>
+
+            <!-- Intro Content -->
+            <div
+              class="absolute inset-0 left-0 right-0 z-10 flex flex-col sm:flex-row justify-center sm:justify-between items-center p-2 sm:p-4 md:p-8"
+            >
+              <!-- Left side - centered -->
+              <div
+                class="flex flex-col sm:flex-row items-center sm:items-end gap-3 sm:gap-4 md:gap-6"
+              >
+                <!-- Profile Image -->
+                <div class="flex-shrink-0">
+                  <div class="relative group">
+                    <div
+                      class="absolute -inset-1 bg-gradient-to-r from-[var(--primary-blue)] to-[var(--secondary-blue)] rounded-full blur opacity-10 group-hover:opacity-70 transition duration-300"
+                    ></div>
+                    <img
+                      src="img/me.png"
+                      alt="Sujana Mehta"
+                      class="relative modern-radius-lg w-24 sm:w-32 md:w-40 lg:w-44 h-auto object-fill modern-shadow-lg group-hover:ring-white/40 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+
+                <!-- Name and Contact -->
+                <div class="flex-1 text-center sm:text-left">
+                  <div class="space-y-3 sm:space-y-4 md:space-y-6">
+                    <!-- Name Section -->
+                    <div>
+                      <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-2xl mb-2"
+                      >
+                        Sujana Mehta
+                      </h1>
+                    </div>
+
+                    <!-- Contact Button -->
+                    <div
+                      class="flex items-center justify-center sm:justify-start gap-4"
+                    >
+                      <a
+                        href="#contact"
+                        class="group relative inline-flex items-center gap-2 sm:gap-3 mb-1 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white text-[var(--primary-blue)] modern-radius-lg font-semibold hover:bg-[var(--blue-50)] transition-all duration-300 modern-shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden text-sm sm:text-base"
+                      >
+                        <div
+                          class="absolute inset-0 button-gradient opacity-0 group-hover:opacity-100 transition duration-300"
+                        ></div>
+                        <span class="relative z-10 group-hover:text-white"
+                          >CONTACT ME</span
+                        >
+                        <svg
+                          class="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--  <div class="flex-1 w-2/3">
+                    
+                    <p class="text-lg md:text-xl mb-6 opacity-90 w-1/2">
+                    Delve into my space and enjoy your time knowing me. Here
+                    you'll find a showcase of my work, my journey in learning, and
+                    the projects I've dedicated my time to.
+                    </p> 
+                    <a
+                    href="#contact"
+                    class="inline-block px-8 py-3 bg-white text-gray-800 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg hover:shadow-xl"
+                  >
+                    CONTACT ME
+                  </a>
+                </div>-->
+              <!-- Contact button positioned at bottom right -->
+              <div
+                class="absolute bottom-1 sm:bottom-2 md:bottom-3 right-1 sm:right-2 md:right-4 bg-white/20 backdrop-blur-sm modern-radius-lg w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-row items-stretch modern-shadow"
+              >
+                <div class="flex-1 p-2 sm:p-3 md:p-4">
+                  <p class="text-white opacity-90 text-xs sm:text-sm">
+                    Open for opportunities in Data Science & Software
+                    Development. Let's build something impactful together.
+                  </p>
+                </div>
+                <a
+                  href="#contact"
+                  class="bg-blue-100 text-black px-2 sm:px-3 md:px-4 flex items-center justify-center rounded-r-lg hover:bg-[var(--blue-500)] smooth-transition"
+                >
+                  >
+                </a>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- ===== Bottom (40%) ===== -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 text-black"
+        >
+          <!-- Experience (spans 2 columns) -->
+          <section
+            class="sm:col-span-2 lg:col-span-2 card-gradient text-black modern-radius-lg p-3 sm:p-4 md:p-6 modern-shadow"
+          >
+            <a href="#experience">
+              <h2
+                class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-[var(--primary-blue)]"
+              >
+                Experience
+              </h2>
+              <div class="space-y-3 sm:space-y-4 md:space-y-6">
+                <!-- Experience Item 1 -->
+                <div
+                  class="border-l-4 border-[var(--primary-blue)] pl-3 sm:pl-4 md:pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-2"
+                  >
+                    <h3 class="font-bold text-xs sm:text-sm text-gray-800">
+                      Software Developer
+                    </h3>
+                    <span
+                      class="text-xs sm:text-sm text-[var(--primary-blue)] bg-[var(--blue-100)] px-2 sm:px-3 md:px-4 py-1 modern-radius-lg w-fit"
+                      >Feb 2022 – Present</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div
+                  class="border-l-4 border-[var(--secondary-blue)] pl-3 sm:pl-4 md:pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-2"
+                  >
+                    <h3 class="font-bold text-xs sm:text-sm text-gray-800">
+                      Praxis Technical Teaching Assistant
+                    </h3>
+                    <span
+                      class="text-xs sm:text-sm text-[var(--secondary-blue)] bg-[var(--blue-100)] px-2 sm:px-3 md:px-4 py-1 modern-radius-lg w-fit"
+                      >June 2025 – Present</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div
+                  class="border-l-4 border-[var(--accent-blue)] pl-3 sm:pl-4 md:pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-2"
+                  >
+                    <h3 class="font-bold text-xs sm:text-sm text-gray-800">
+                      Research Assistant
+                    </h3>
+                    <span
+                      class="text-xs sm:text-sm text-[var(--accent-blue)] bg-[var(--blue-100)] px-2 sm:px-3 md:px-4 py-1 modern-radius-lg w-fit"
+                      >May 2024 – May 2025</span
+                    >
+                  </div>
+                </div>
+              </div></a
+            >
+          </section>
+
+          <!-- Skills -->
+          <section
+            class="card-gradient modern-radius-lg p-3 sm:p-4 md:p-6 modern-shadow"
+          >
+            <a href="#skills">
+              <h2
+                class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-[var(--primary-blue)]"
+              >
+                Skills
+              </h2>
+              <ul class="flex flex-wrap gap-1 sm:gap-2">
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 button-gradient text-white modern-radius-lg text-xs sm:text-sm font-medium"
+                  >Python</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--secondary-blue)] text-white modern-radius-lg text-xs sm:text-sm font-medium"
+                  >SQL</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 button-gradient text-white modern-radius-lg text-xs sm:text-sm font-medium"
+                  >React</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--secondary-blue)] text-white modern-radius-lg text-xs sm:text-sm font-medium"
+                  >Pandas</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--blue-100)] text-[var(--primary-blue-dark)] modern-radius-lg text-xs sm:text-sm font-medium"
+                  >ML</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--blue-200)] text-[var(--primary-blue-dark)] modern-radius-lg text-xs sm:text-sm font-medium"
+                  >Data Analysis</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--blue-300)] text-[var(--primary-blue-dark)] modern-radius-lg text-xs sm:text-sm font-medium"
+                  >Tailwind</span
+                >
+                <span
+                  class="px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--blue-400)] text-white modern-radius-lg text-xs sm:text-sm font-medium"
+                  >HTML/CSS</span
+                >
+              </ul></a
+            >
+          </section>
+
+          <!-- Projects -->
+          <section
+            class="card-gradient modern-radius-lg p-3 sm:p-4 md:p-6 modern-shadow"
+          >
+            <a href="#projects">
+              <h2
+                class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-[var(--primary-blue)]"
+              >
+                Projects
+              </h2>
+              <div class="grid grid-cols-2 gap-1 sm:gap-2">
+                <div
+                  class="button-gradient modern-radius-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-12 sm:h-14 md:h-16"
+                >
+                  RIVETTO
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-[var(--secondary-blue)] to-[var(--secondary-blue-dark)] modern-radius-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-12 sm:h-14 md:h-16"
+                >
+                  SELU ADVISOR
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--secondary-blue-dark)] modern-radius-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-12 sm:h-14 md:h-16"
+                >
+                  RECIPE GEN
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-[var(--blue-400)] to-[var(--blue-600)] modern-radius-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-12 sm:h-14 md:h-16"
+                >
+                  EEG DATA
+                </div>
+              </div></a
+            >
+          </section>
         </div>
       </div>
     </div>
-
-    <div class="nunito scroll-smooth">
-      <div id="header" class="text-white hidden lg:block">
-        <nav
-          class="absolute top-0 left-0 right-0 p-8 z-20 flex items-center justify-between"
-        >
-          <div class="flex space-x-8">
-            <a
-              href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
-              target="_blank"
-              class="text-gray-400 hover:text-blue-500"
-            >
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a
-              href="https://github.com/sujanamht"
-              target="_blank"
-              class="text-gray-400 hover:text-white"
-            >
-              <i class="fab fa-github fa-2x"></i>
-            </a>
-
-            <a
-              href="mailto:suzanamht@gmail.com"
-              class="text-gray-400 hover:text-red-500"
-            >
-              <i class="fas fa-envelope fa-2x"></i>
-            </a>
-            <!-- <a
-              href="/img/SUJANA_MEHTA_Resume.pdf"
-              download
-              title="Download Resume"
-              class="text-gray-400 hover:text-blue-500"
-            >
-              <i class="fas fa-download fa-2x"></i>
-            </a> -->
-          </div>
-          <div>
-            <a href="#">
-              <h1 class="text-3xl font1">SUJANA</h1>
-            </a>
-          </div>
-        </nav>
-        <div id="intro" class="">
-          <div class="absolute w-96 h-96 bottom-8 ml-32">
-            <div
-              class="absolute inset-0 bg-white w-96 h-96 rounded-full z-10"
-            ></div>
-            <img
-              src="./img/me.png"
-              alt="Me"
-              class="absolute inset-0 -mt-24 rounded-full z-20 h-auto w-96"
-            />
-          </div>
-          <div
-            class="absolute inset-0 bg-black opacity-80 shadow flex flex-col justify-center items-end w-full pr-32"
-          >
-            <h1 class="text-6xl mt-40 font-serif">Sujana Mehta</h1>
-            <div class="flex mt-6">
-              <p class="right-0 w-1/2 ml-auto text-right">
-                Delve into my space and enjoy your time knowing me. Here you'll
-                find a showcase of my work, my journey in learning, and the
-                projects I've dedicated my time to.
-              </p>
-            </div>
-            <!-- <button
-              class="z-20 bg-[#84A7BA] mt-6 px-8 py-2 text-black border border-white font-semibold rounded-full hover:bg-white hover:text-gray-800 transition duration-300"
-            >
-              CONTACT ME
-            </button> -->
-          </div>
-        </div>
-
-        <video autoplay loop muted class="w-full object-cover h-3/4">
-          <source src="./img/mountain.mp4" type="video/mp4" />
-        </video>
-
-        <div class="absolute right-0 z-10 bottom-3 pr-32 scroll-smooth">
-          <a href="#skills">
-            <h1 class="text-xl text-black font1 underline animate-bounce">
-              KNOW MORE ...
-            </h1>
-          </a>
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xmlns:svgjs="http://svgjs.dev/svgjs"
-          viewBox="0 0 2400 800"
-          class="absolute -bottom-32"
-        >
-          <defs>
-            <linearGradient
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-              id="sssurf-grad"
-            >
-              <stop stop-color="#ffffffff" stop-opacity="1" offset="0%"></stop>
-              <stop
-                stop-color="hsla(0, 0%, 100%, 1.00)"
-                stop-opacity="1"
-                offset="100%"
-              ></stop>
-            </linearGradient>
-          </defs>
-          <g
-            fill="url(#sssurf-grad)"
-            transform="matrix(1,0,0,1,-1.936279296875,336.0922384262085)"
-          >
-            <path
-              d="M-10,10C158.75,27.5,464.58333333333337,101.08333333333333,800,94C1135.4166666666665,86.91666666666667,1266.6666666666665,-8.166666666666668,1600,-24C1933.3333333333335,-39.83333333333333,2181.25,-70.33333333333334,2400,18C2618.75,106.33333333333334,3254.1666666666665,216.25,2650,400C2045.8333333333335,583.75,156.25,795.8333333333334,-500,900"
-              transform="matrix(1,0,0,1,0,35)"
-              opacity="NaN"
-            ></path>
-          </g>
-        </svg>
-      </div>
-
-      <div
-        id="skills"
-        class="relative flex item-center px-8 py-16 font-serif overflow-hidden"
-      >
-        <!-- Add the black background layer -->
+    <!-- Content Panels -->
+    <div
+      class="px-2 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 bg-[var(--blue-50)] min-h-[80vh]"
+    >
+      <div class="max-w-7xl mx-auto space-y-8 sm:space-y-12 md:space-y-16">
+        <!-- Skills Panel -->
         <div
-          class="absolute inset-0 bg-[#71c3f7] opacity-20 z-0 h-32 mt-28"
-        ></div>
-
-        <!-- Main content, placed above the background layer -->
-        <div class="relative z-10 flex">
-          <div class="flex items-center text-center">
-            <span
-              class="relative text-3xl text-black transform -rotate-90 origin-left ml-7 mt-36"
-            >
-              SKILLS
-            </span>
-          </div>
-
+          id="skills"
+          class="card-gradient modern-radius-lg p-4 sm:p-6 md:p-8 modern-shadow border border-[var(--blue-200)]"
+        >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-[var(--primary-blue)] mb-3 sm:mb-4"
+          >
+            SKILLS
+          </h2>
           <div
-            class="marquee-container flex space-x-8 text-6xl mt-16 -ml-14 overflow-hidden"
+            class="marquee-container flex space-x-2 sm:space-x-4 text-lg sm:text-2xl md:text-3xl overflow-hidden"
           >
             <div
-              class="flex items-center space-x-9 marquee-content hover:text-7xl"
+              class="flex items-center space-x-3 sm:space-x-4 md:space-x-6 marquee-content"
             >
               <!-- Programming Languages -->
               <i class="devicon-cplusplus-plain text-[#00599C]" title="C++"></i>
@@ -418,378 +597,64 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="experience" class="relative w-full px-3 my-10 lg:px-36 lg:my-24">
-        <!-- Add the black background layer -->
-        <div class="absolute inset-0 bg-slate-200 opacity-60 z-0"></div>
-
-        <!-- Main content, placed above the background layer -->
-        <div class="relative z-10">
-          <h1 class="relative text-5xl font-serif text-gray-800 bottom-6">
-            EXPERIENCES:
-          </h1>
-          <div class="md:p-12">
-            <div class="md:border-l-4 border-[#303655]">
-              <!-- First Entry -->
-
-              <div class="relative mb-10 md:pl-8">
-                <div
-                  class="hidden md:flex absolute top-0 -left-4 bg-black w-8 h-8 rounded-full flex items-center justify-center text-white"
-                >
-                  <svg
-                    class="w-1/3 h-auto"
-                    fill="white"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
-                >
-                  <p
-                    class="flex justify-between text-xl font-semibold text-stone-900"
-                  >
-                    <span>Southeastern Louisiana University</span>
-                    <span class="text-sm text-gray-700"
-                      >Hammond, Louisiana</span
-                    >
-                  </p>
-                  <p class="flex justify-between text-md text-gray-700">
-                    <span>Praxis Technical Teaching Assistant</span>
-                    <span class="text-sm text-gray-700"
-                      >June 2025 – Present</span
-                    >
-                  </p>
-                  <ul class="list-disc pl-5 mt-3">
-                    <li>
-                      Facilitated one-on-one tutoring and mentoring sessions,
-                      helping students strengthen core programming skills and
-                      improve their overall performance.
-                    </li>
-                    <li>
-                      Assisted new educators in mastering computer science
-                      concepts and preparing for the Praxis exam.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Second Entry - IT Nepal Solutions -->
-              <div class="relative mb-10 md:pl-8">
-                <div
-                  class="hidden md:flex absolute top-0 -left-4 bg-black w-8 h-8 rounded-full flex items-center justify-center text-white"
-                >
-                  <svg
-                    class="w-1/3 h-auto"
-                    fill="white"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
-                >
-                  <p
-                    class="flex justify-between text-xl font-semibold text-stone-900"
-                  >
-                    <span>IT Nepal Solutions</span>
-                    <span class="text-sm text-gray-700">Kathmandu, Nepal</span>
-                  </p>
-                  <p class="flex justify-between text-md text-gray-700">
-                    <span>Developer</span>
-                    <span class="text-sm text-gray-700"
-                      >Feb 2022 – Present</span
-                    >
-                  </p>
-                  <ul class="list-disc pl-5 mt-3">
-                    <li>
-                      Developed backend features using Django & PostgreSQL,
-                      enhancing performance, security, & scalability.
-                    </li>
-                    <li>
-                      Built and optimized admin dashboards for cargo companies
-                      like APEX and Ship Global Nepal, supporting end-to-end
-                      workflow management from shipments to client accounts.
-                    </li>
-                    <li>
-                      Collaborated with an offshore team across time zones and
-                      contributed to GitHub-based development through code
-                      reviews, bug fixes, and feature enhancements, ensuring
-                      quality and consistency across the codebase.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Third Entry -->
-              <div class="relative mb-10 md:pl-8">
-                <div
-                  class="hidden md:flex absolute top-0 -left-4 bg-black w-8 h-8 rounded-full flex items-center justify-center text-white"
-                >
-                  <svg
-                    class="w-1/3 h-auto"
-                    fill="white"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
-                >
-                  <p
-                    class="flex justify-between text-xl font-semibold text-gray-800"
-                  >
-                    <span>Research & Development Team [Wright's Lab]</span>
-                    <span class="text-sm text-gray-600"
-                      >Hammond, Louisiana</span
-                    >
-                  </p>
-                  <p class="flex justify-between text-md text-gray-600">
-                    <span>Southeastern Louisiana University</span>
-                    <span class="text-sm text-gray-500"
-                      >May 2024 – May 2025</span
-                    >
-                  </p>
-                  <ul class="list-disc pl-5 mt-3 text-gray-900">
-                    <li>
-                      Enhanced the Nexus library in RevBayes, a C++ software for
-                      phylogenetic statistical computation, to read assumption
-                      blocks in .nex files, processing previously lost data.
-                    </li>
-                    <li>
-                      Implemented JSON parsing in RevGadgets, a tool for
-                      importing and visualizing RevBayes output in R, enabling
-                      users to upload and process JSON files.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Fourth Entry -->
-              <div class="relative mb-10 md:pl-8">
-                <div
-                  class="hidden md:flex absolute top-0 -left-4 bg-black w-8 h-8 rounded-full flex items-center justify-center text-white"
-                >
-                  <svg
-                    class="w-1/3 h-auto"
-                    fill="white"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="bg-gradient-to-r from-[#71c3f7] to-[#F6F6F6] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
-                >
-                  <p
-                    class="flex justify-between text-xl font-semibold text-gray-800"
-                  >
-                    <span>Southeastern Louisiana University</span>
-                    <span class="text-sm text-gray-700"
-                      >Hammond, Louisiana</span
-                    >
-                  </p>
-                  <p class="flex justify-between text-md text-gray-600">
-                    <span>Computer Science Tutor</span>
-                    <span class="text-sm text-gray-600"
-                      >September 2024 – December 2024</span
-                    >
-                  </p>
-                  <ul class="list-disc pl-5 mt-3">
-                    <li>
-                      Provide one-on-one and group tutoring sessions to help
-                      students with computer science concepts, both in-person
-                      and online, applying strong subject knowledge to address
-                      their academic needs.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Fifth Entry -->
-              <div class="relative mb-20 md:pl-8">
-                <div
-                  class="hidden md:flex absolute top-0 -left-4 bg-black w-8 h-8 rounded-full flex items-center justify-center text-white"
-                >
-                  <svg
-                    class="w-1/3 h-auto"
-                    fill="white"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.1 6.478a1 1 0 00.95.69h6.769c.969 0 1.372 1.24.588 1.81l-5.479 3.987a1 1 0 00-.364 1.118l2.1 6.478c.3.921-.755 1.688-1.538 1.118l-5.479-3.987a1 1 0 00-1.176 0l-5.479 3.987c-.783.57-1.838-.197-1.538-1.118l2.1-6.478a1 1 0 00-.364-1.118L2.44 11.905c-.783-.57-.38-1.81.588-1.81h6.769a1 1 0 00.95-.69l2.1-6.478z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="bg-gradient-to-r from-[#F6F6F6] to-[#71c3f7] shadow-md rounded-lg p-6 ml-6 hover-animate-gradient transition-all duration-500"
-                >
-                  <p
-                    class="flex justify-between text-xl font-semibold text-gray-800"
-                  >
-                    <span>DXC Technology</span>
-                    <span class="text-sm text-gray-600"
-                      >New Orleans, Louisiana</span
-                    >
-                  </p>
-                  <p class="flex justify-between text-md text-gray-600">
-                    <span>Summer Intern 2023</span>
-                    <span class="text-sm text-gray-500"
-                      >June – August 2023</span
-                    >
-                  </p>
-                  <ul class="list-disc pl-5 mt-3 text-gray-900">
-                    <li>
-                      Revamped the Data Quality Accelerator app based on Django
-                      and Angular, enhancing the user experience.
-                    </li>
-                    <li>
-                      Improved metadata retrieval from AWS S3 buckets, boosting
-                      app performance.
-                    </li>
-                    <li>
-                      Utilized Pandas to analyze tickets data, extracting
-                      valuable insights for decision-making.
-                    </li>
-                    <li>
-                      Work one-on-one and in groups to tutor students on
-                      Mathematical concepts like Applied Algebra, Finite
-                      Mathematics and College Algebra.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="project" class="relative w-full pl-3 lg:px-36 lg:my-24">
-      <!-- Add the black background layer -->
-      <div class="absolute inset-0 bg-slate-200 opacity-60 z-0"></div>
-
-      <!-- Main content, placed above the background layer -->
-      <div class="relative z-10">
-        <h1 class="relative text-5xl font-serif text-gray-800 bottom-6">
-          PROJECTS:
-        </h1>
+        <!-- Projects Panel with React Island -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 mt-3"
+          id="projects"
+          class="card-gradient modern-radius-lg p-4 sm:p-6 md:p-8 modern-shadow border border-[var(--blue-200)] min-h-[300px] sm:min-h-[350px] md:min-h-[400px]"
         >
-          <!-- Project Cards -->
-          <div
-            class="project-card"
-            data-title="RIVETTO"
-            data-description="An AI-driven video editor to detect viral moments for creating short-form content."
-            data-technologies="AI, Video Processing"
-            data-img="./img/project.jpg"
-          ></div>
-          <div
-            class="project-card"
-            data-title="SELU ADVISOR"
-            data-description="An AI model for personalized academic advising at Southeastern Louisiana University."
-            data-technologies="AI, Machine Learning"
-            data-img="./img/project.jpg"
-          ></div>
-          <div
-            class="project-card"
-            data-title="RECIPE GEN"
-            data-description="An AI model trained to generate recipe based on the given ingredients."
-            data-technologies="AI, Machine Learning, Python"
-            data-img="./img/project.jpg"
-          ></div>
-          <div
-            class="project-card"
-            data-title="EEG DATA PROCESSING"
-            data-description="Extracted EEG data from a pickle file, applied filtering techniques for feature generation, trained a model, and performed clustering based on each electrode."
-            data-technologies="Python, Machine Learning, Data Analysis"
-            data-img="./img/project.jpg"
-          ></div>
-          <div
-            class="project-card"
-            data-title="SELU THRIFT STORE"
-            data-description="Developed a platform utilizing .NET and React TypeScript as part of a team project, enabling effortless buying and selling experiences."
-            data-technologies=".NET, React TypeScript"
-            data-img="./img/project.jpg"
-          ></div>
-        </div>
-      </div>
-
-      <!-- Popup Modal -->
-      <div
-        id="popupModal"
-        class="fixed inset-0 bg-black text-white bg-opacity-80 flex items-center justify-center hidden z-20"
-      >
-        <div
-          class="bg-white rounded-lg m-5 mt-[-100px] lg:mt-0 w-full sm:w-2/3 md:w-2/5 h-auto relative text-black shadow-lg overflow-y-auto"
-          style="max-height: 80vh"
-        >
-          <button
-            onclick="togglePopup(false)"
-            class="close-btn fixed text-3xl font-bold hover:text-gray-700 px-2 py-4 z-30"
+          <h2
+            class="text-xl sm:text-2xl font-bold text-[var(--primary-blue)] mb-3 sm:mb-4"
           >
-            &times;
-          </button>
-          <img
-            id="popupImg"
-            src=""
-            alt="Project Image"
-            class="w-full h-auto px-6 pt-9 rounded-t-lg"
-          />
-          <div class="flex flex-col flex-grow p-5">
-            <h2 id="popupTitle" class="text-xl font-bold"></h2>
-            <p id="popupTechnologies" class="text-gray-700 my-2"></p>
-            <p id="popupDescription" class="text-lg"></p>
-          </div>
+            PROJECTS
+          </h2>
+          <div
+            id="project-filter-react-island"
+            class="rounded-lg overflow-hidden"
+          ></div>
         </div>
+
+        <!-- Experience Timeline Panel with React Island -->
+        <section
+          id="experience"
+          class="border bg-white border-[var(--blue-200)] modern-radius-lg p-4 sm:p-6 md:p-8 modern-shadow"
+        >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-[var(--primary-blue)] mb-3 sm:mb-4"
+          >
+            EXPERIENCE
+          </h2>
+          <div
+            class="card-gradient modern-radius-lg sm:p-2 overflow-y-auto min-h-[400px] sm:min-h-[450px] md:min-h-[500px] max-h-[60vh] sm:max-h-[65vh] md:max-h-[70vh]"
+          >
+            <div
+              id="timeline-react-island"
+              class="rounded-lg overflow-hidden"
+            ></div>
+          </div>
+        </section>
       </div>
     </div>
 
-    <div id="contact" class="mt-32 bg-slate-100 px-6 md:px-14 text-white">
-      <h1 class="relative text-5xl font-serif text-gray-800 bottom-6 px-18">
-        CONTACT ME:
-      </h1>
-      <div class="flex flex-col md:flex-row justify-between">
+    <!-- Contact Footer Section -->
+    <footer
+      id="contact"
+      class="card-gradient modern-shadow p-4 sm:p-6 md:p-8 lg:p-12 min-h-[50vh] sm:min-h-[55vh] md:min-h-[60vh]"
+    >
+      <h2
+        class="text-2xl sm:text-3xl font-bold text-[var(--primary-blue)] mb-4 sm:mb-6 text-center"
+      >
+        CONTACT ME
+      </h2>
+      <div class="flex flex-col lg:flex-row justify-between">
         <!-- Form section takes 100% on small screens and 50% width on larger screens -->
-        <div id="form" class="w-3/4 md:w-1/2 m-10 md:m-20">
-          <p class="text-center text-gray-600 mb-8">
+        <div
+          id="form"
+          class="w-full lg:w-1/2 m-4 sm:m-6 md:m-8 lg:m-10 xl:m-20"
+        >
+          <p
+            class="text-center text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base"
+          >
             I'd love to hear from you!
           </p>
 
@@ -812,13 +677,13 @@
           </div>
 
           <div
-            class="max-w-lg mx-auto rounded-lg shadow-lg p-8 bg-white text-black"
+            class="max-w-lg mx-auto rounded-lg shadow-lg p-4 sm:p-6 md:p-8 bg-white text-black"
           >
             <form
               id="contactForm"
               action="https://api.web3forms.com/submit"
               method="POST"
-              class="space-y-4"
+              class="space-y-3 sm:space-y-4"
             >
               <input
                 type="hidden"
@@ -826,13 +691,13 @@
                 value="c7d23137-f810-47f6-b01a-babb034fa00c"
               />
               <div
-                class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-3"
+                class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3"
               >
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  class="w-full border border-gray-400 rounded-lg px-3 sm:px-4 py-2 text-sm sm:text-base"
                   placeholder="Your Name"
                   required
                 />
@@ -840,7 +705,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  class="w-full border border-gray-400 rounded-lg px-3 sm:px-4 py-2 text-sm sm:text-base"
                   placeholder="Your Email"
                   required
                 />
@@ -850,7 +715,7 @@
                   id="message"
                   name="message"
                   rows="4"
-                  class="w-full border border-gray-400 rounded-lg px-4 py-2"
+                  class="w-full border border-gray-400 rounded-lg px-3 sm:px-4 py-2 text-sm sm:text-base"
                   placeholder="Your Message"
                   required
                 ></textarea>
@@ -858,7 +723,7 @@
               <div>
                 <button
                   type="submit"
-                  class="w-full bg-slate-500 text-white rounded-lg py-2 font-medium hover:bg-blue-600 transition duration-300"
+                  class="w-full bg-[var(--primary-blue)] text-white rounded-lg py-2 sm:py-2.5 font-medium hover:bg-blue-600 transition duration-300 text-sm sm:text-base"
                 >
                   Send Message
                 </button>
@@ -869,57 +734,67 @@
 
         <!-- Social media section with responsive layout -->
         <div
-          class="w-3/4 md:w-1/2 flex flex-col items-center m-10 md:m-20 border-l-0 md:border-l-4 border-gray-700 pl-0 md:pl-4"
+          class="w-full lg:w-1/2 flex flex-col items-center m-4 sm:m-6 md:m-8 lg:m-10 xl:m-20 border-l-0 lg:border-l-4 border-gray-700 pl-0 lg:pl-4"
         >
-          <h4 class="text-gray-500 text-3xl md:m-8">- or find me here:</h4>
-          <div class="flex flex-col space-y-6 mt-8">
-            <div class="flex space-x-4 items-center">
+          <h4
+            class="text-gray-500 text-xl sm:text-2xl md:text-3xl lg:m-8 text-center"
+          >
+            - or find me here:
+          </h4>
+          <div class="flex flex-col space-y-4 sm:space-y-6 mt-6 sm:mt-8">
+            <div
+              class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center"
+            >
               <a
                 href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
                 target="_blank"
-                class="text-gray-800 hover:text-blue-500"
+                class="text-[var(--primary-blue)] hover:text-blue-500"
               >
-                <i class="fab fa-linkedin fa-3x"></i>
+                <i class="fab fa-linkedin text-2xl sm:text-3xl"></i>
               </a>
-              <p class="mt-2">
+              <p class="mt-2 text-center sm:text-left">
                 <a
                   href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
                   target="_blank"
-                  class="text-sm text-gray-400 hover:text-black"
+                  class="text-xs sm:text-sm text-gray-400 hover:text-black break-all"
                 >
                   linkedin.com/in/sujana-mehta-924bb0260/
                 </a>
               </p>
             </div>
-            <div class="flex space-x-4 items-center">
+            <div
+              class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center"
+            >
               <a
                 href="https://github.com/sujanamht"
                 target="_blank"
                 class="text-gray-800 hover:text-white"
               >
-                <i class="fab fa-github fa-3x"></i>
+                <i class="fab fa-github text-2xl sm:text-3xl"></i>
               </a>
-              <p class="mt-2">
+              <p class="mt-2 text-center sm:text-left">
                 <a
                   href="https://github.com/sujanamht"
                   target="_blank"
-                  class="text-sm text-gray-400 hover:text-black"
+                  class="text-xs sm:text-sm text-gray-400 hover:text-black"
                 >
                   github.com/sujanamht
                 </a>
               </p>
             </div>
-            <div class="flex space-x-4 items-center">
+            <div
+              class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center"
+            >
               <a
                 href="mailto:suzanamht@gmail.com"
-                class="text-gray-800 hover:text-red-500"
+                class="text-[var(--accent-blue)] hover:text-red-700"
               >
-                <i class="fas fa-envelope fa-3x"></i>
+                <i class="fas fa-envelope text-2xl sm:text-3xl"></i>
               </a>
-              <p class="mt-2">
+              <p class="mt-2 text-center sm:text-left">
                 <a
                   href="mailto:suzanamht@gmail.com"
-                  class="text-sm text-gray-400 hover:text-black"
+                  class="text-xs sm:text-sm text-gray-400 hover:text-black"
                 >
                   sujanamehta@gmail.com
                 </a>
@@ -928,80 +803,303 @@
           </div>
         </div>
       </div>
+    </footer>
+
+    <!-- Popup Modal for Projects -->
+    <div
+      id="popupModal"
+      class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-2 sm:p-4"
+    >
+      <div
+        class="bg-white rounded-lg w-full max-w-2xl h-auto relative text-black shadow-lg overflow-y-auto"
+        style="max-height: 80vh"
+      >
+        <button
+          onclick="togglePopup(false)"
+          class="absolute top-2 sm:top-4 right-2 sm:right-4 text-xl sm:text-2xl font-bold hover:text-gray-700 z-30 bg-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center"
+        >
+          &times;
+        </button>
+        <img
+          id="popupImg"
+          src=""
+          alt="Project Image"
+          class="w-full h-32 sm:h-40 md:h-48 object-cover rounded-t-lg"
+        />
+        <div class="p-3 sm:p-4 md:p-6">
+          <h2
+            id="popupTitle"
+            class="text-lg sm:text-xl md:text-2xl font-bold mb-2"
+          ></h2>
+          <p
+            id="popupTechnologies"
+            class="text-blue-600 mb-3 sm:mb-4 font-medium text-sm sm:text-base"
+          ></p>
+          <p
+            id="popupDescription"
+            class="text-gray-700 leading-relaxed text-sm sm:text-base"
+          ></p>
+        </div>
+      </div>
     </div>
 
-    <script defer>
-      const projectCards = document.querySelectorAll(".project-card");
-      const popup = document.getElementById("popupModal");
-      const popupTitle = document.getElementById("popupTitle");
-      const popupTechnologies = document.getElementById("popupTechnologies");
-      const popupDescription = document.getElementById("popupDescription");
-      const popupImg = document.getElementById("popupImg");
+    <!-- React Islands -->
+    <script type="text/babel">
+      const { useState, useEffect } = React;
 
-      // Initialize project cards with data from attributes
-      projectCards.forEach((card) => {
-        const title = card.getAttribute("data-title");
-        const description = card.getAttribute("data-description");
-        const technologies = card.getAttribute("data-technologies");
-        const imgSrc = card.getAttribute("data-img");
+      // Project Filter React Island
+      function ProjectFilter() {
+        const [selectedFilter, setSelectedFilter] = useState("All");
+        const [projects] = useState([
+          {
+            id: 1,
+            title: "RIVETTO",
+            description:
+              "An AI-driven video editor to detect viral moments for creating short-form content.",
+            technologies: "AI, Video Processing",
+            category: "AI",
+            image: "./img/project.jpg",
+          },
+          {
+            id: 2,
+            title: "SELU ADVISOR",
+            description:
+              "An AI model for personalized academic advising at Southeastern Louisiana University.",
+            technologies: "AI, Machine Learning",
+            category: "AI",
+            image: "./img/project.jpg",
+          },
+          {
+            id: 3,
+            title: "RECIPE GEN",
+            description:
+              "An AI model trained to generate recipe based on the given ingredients.",
+            technologies: "AI, Machine Learning, Python",
+            category: "AI",
+            image: "./img/project.jpg",
+          },
+          {
+            id: 4,
+            title: "EEG DATA PROCESSING",
+            description:
+              "Extracted EEG data from a pickle file, applied filtering techniques for feature generation, trained a model, and performed clustering based on each electrode.",
+            technologies: "Python, Machine Learning, Data Analysis",
+            category: "Data Science",
+            image: "./img/project.jpg",
+          },
+          {
+            id: 5,
+            title: "SELU THRIFT STORE",
+            description:
+              "Developed a platform utilizing .NET and React TypeScript as part of a team project, enabling effortless buying and selling experiences.",
+            technologies: ".NET, React TypeScript",
+            category: "Web Development",
+            image: "./img/project.jpg",
+          },
+        ]);
 
-        card.innerHTML = `
-            <div class="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col h-full">
-                <img src="${imgSrc}" alt="${title}" class="w-full h-56 sm:h-64 object-cover rounded-t-lg" />
-                <div class="flex flex-col flex-grow">
-                    <h2 class="text-2xl text-white mb-10 font-bold text-center mt-8">${title}</h2>
-                    <div class="mt-auto">
-                        <button onclick="openPopup('${title}', '${description}', '${technologies}', '${imgSrc}')" class="w-full py-2 text-white border border-white rounded-full hover:bg-white hover:text-gray-800 transition duration-300">
-                            View more...
-                        </button>
-                    </div>
-                </div>
+        const categories = ["All", ...new Set(projects.map((p) => p.category))];
+
+        const filteredProjects =
+          selectedFilter === "All"
+            ? projects
+            : projects.filter((p) => p.category === selectedFilter);
+
+        const openModal = (project) => {
+          window.openProjectModal(project);
+        };
+
+        return (
+          <div>
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedFilter(category)}
+                  className={`px-2 sm:px-3 py-1 modern-radius-lg text-xs sm:text-sm font-medium smooth-transition ${
+                    selectedFilter === category
+                      ? "button-gradient text-white"
+                      : "bg-[var(--blue-100)] text-[var(--primary-blue)] hover:bg-[var(--blue-200)]"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
-        `;
-      });
 
-      function openPopup(title, description, technologies, imgSrc) {
-        popupTitle.textContent = title;
-        popupDescription.textContent = description;
-        popupTechnologies.textContent = `Technologies Used: ${technologies}`;
-        popupImg.src = imgSrc;
-        togglePopup(true);
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-4">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="card-gradient modern-radius-lg p-3 sm:p-4 border border-[var(--blue-200)] smooth-transition cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+                  onClick={() => openModal(project)}
+                >
+                  <h3 className="font-semibold text-[var(--primary-blue)] mb-1 sm:mb-2 text-sm sm:text-base">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[var(--secondary-blue)] mb-1 sm:mb-2">
+                    {project.technologies}
+                  </p>
+                  <p className="text-xs text-gray-600 line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       }
 
+      // Timeline React Island
+      function Timeline() {
+        const [experiences] = useState([
+          {
+            id: 1,
+            company: "Southeastern Louisiana University",
+            role: "Praxis Technical Teaching Assistant",
+            duration: "June 2025 – Present",
+            location: "Hammond, Louisiana",
+            description: [
+              "Facilitated one-on-one tutoring and mentoring sessions, helping students strengthen core programming skills and improve their overall performance.",
+              "Assisted new educators in mastering computer science concepts and preparing for the Praxis exam.",
+            ],
+          },
+          {
+            id: 2,
+            company: "IT Nepal Solutions",
+            role: "Developer",
+            duration: "Feb 2022 – Present",
+            location: "Kathmandu, Nepal",
+            description: [
+              "Developed backend features using Django & PostgreSQL, enhancing performance, security, & scalability.",
+              "Built and optimized admin dashboards for cargo companies like APEX and Ship Global Nepal, supporting end-to-end workflow management from shipments to client accounts.",
+              "Collaborated with an offshore team across time zones and contributed to GitHub-based development through code reviews, bug fixes, and feature enhancements, ensuring quality and consistency across the codebase.",
+            ],
+          },
+          {
+            id: 3,
+            company: "Southeastern Louisiana University",
+            role: "Research & Development Team [Wright's Lab]",
+            duration: "May 2024 – May 2025",
+            location: "Hammond, Louisiana",
+            description: [
+              "Enhanced the Nexus library in RevBayes, a C++ software for phylogenetic statistical computation, to read assumption blocks in .nex files, processing previously lost data.",
+              "Implemented JSON parsing in RevGadgets, a tool for importing and visualizing RevBayes output in R, enabling users to upload and process JSON files.",
+            ],
+          },
+          {
+            id: 4,
+            company: "Southeastern Louisiana University",
+            role: "Computer Science Tutor",
+            duration: "September 2024 – December 2024",
+            location: "Hammond, Louisiana",
+            description: [
+              "Provide one-on-one and group tutoring sessions to help students with computer science concepts, both in-person and online, applying strong subject knowledge to address their academic needs.",
+            ],
+          },
+          {
+            id: 5,
+            company: "DXC Technology",
+            role: "Summer Intern 2023",
+            duration: "June – August 2023",
+            location: "New Orleans, Louisiana",
+            description: [
+              "Revamped the Data Quality Accelerator app based on Django and Angular, enhancing the user experience.",
+              "Improved metadata retrieval from AWS S3 buckets, boosting app performance.",
+              "Utilized Pandas to analyze tickets data, extracting valuable insights for decision-making.",
+              "Work one-on-one and in groups to tutor students on Mathematical concepts like Applied Algebra, Finite Mathematics and College Algebra.",
+            ],
+          },
+        ]);
+
+        return (
+          <div className="space-y-3 sm:space-y-4">
+            {experiences.map((exp) => (
+              <div
+                key={exp.id}
+                className="card-gradient modern-radius-lg p-3 sm:p-4 mb-3 sm:mb-4 border-l-4 border-[var(--primary-blue)] shadow-xl bg-blue-500 smooth-transition hover:translate-x-1 hover:shadow-lg"
+              >
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1">
+                  <h3 className="font-semibold text-[var(--accent-blue)] text-sm sm:text-base">
+                    {exp.role}
+                  </h3>
+                  <span className="text-xs text-[var(--accent-blue)]">
+                    {exp.duration}
+                  </span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 gap-1">
+                  <p className="text-xs sm:text-sm text-[var(--primary-blue)]">
+                    {exp.company}
+                  </p>
+                  <span className="text-xs text-[var(--primary-blue)]">
+                    {exp.location}
+                  </span>
+                </div>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  {exp.description.map((desc, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="w-1 h-1 bg-[var(--primary-blue)] rounded-full mt-1.5 sm:mt-2 mr-2 flex-shrink-0"></span>
+                      <span className="text-xs">{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        );
+      }
+
+      // Mount React Islands
+      const projectRoot = ReactDOM.createRoot(
+        document.getElementById("project-filter-react-island")
+      );
+      projectRoot.render(<ProjectFilter />);
+
+      const timelineRoot = ReactDOM.createRoot(
+        document.getElementById("timeline-react-island")
+      );
+      timelineRoot.render(<Timeline />);
+    </script>
+
+    <!-- Regular JavaScript -->
+    <script>
+      // Global function to open project modal
+      window.openProjectModal = function (project) {
+        const popup = document.getElementById("popupModal");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupTechnologies = document.getElementById("popupTechnologies");
+        const popupDescription = document.getElementById("popupDescription");
+        const popupImg = document.getElementById("popupImg");
+
+        popupTitle.textContent = project.title;
+        popupDescription.textContent = project.description;
+        popupTechnologies.textContent = `Technologies Used: ${project.technologies}`;
+        popupImg.src = project.image;
+        popup.classList.remove("hidden");
+      };
+
       function togglePopup(show) {
+        const popup = document.getElementById("popupModal");
         if (show) {
           popup.classList.remove("hidden");
         } else {
           popup.classList.add("hidden");
         }
       }
-    </script>
 
-    <style>
-      .close-btn {
-        top: 14px;
-        right: 20px;
-        cursor: pointer;
-        background-color: white;
-        border-radius: 10%;
+      // Video handling
+      const video = document.getElementById("backgroundVideo");
+      if (video) {
+        video.play();
+        video.controls = false;
+        video.onended = function () {
+          video.play();
+        };
       }
-    </style>
-    <script>
-      // Get the video element by its ID
-      var video = document.getElementById("backgroundVideo");
 
-      // Ensure the video plays automatically
-      video.play();
-
-      // Hide controls if the controls attribute is present
-      video.controls = false;
-
-      // Ensure the video restarts when it ends
-      video.onended = function () {
-        video.play(); // Loop the video
-      };
-
-      // Handle contact form submission with AJAX
+      // Contact form handling
       document
         .getElementById("contactForm")
         .addEventListener("submit", async function (e) {
@@ -1010,7 +1108,6 @@
           const submitButton = form.querySelector('button[type="submit"]');
           const originalButtonText = submitButton.textContent;
 
-          // Show loading state
           submitButton.textContent = "Sending...";
           submitButton.disabled = true;
 
@@ -1023,46 +1120,34 @@
             const json = await res.json();
 
             if (json.success) {
-              // Hide the form and show thank you message
               form.parentNode.classList.add("hidden");
               document.getElementById("thankYouMsg").classList.remove("hidden");
-
-              // Scroll to thank you message
               document.getElementById("thankYouMsg").scrollIntoView({
                 behavior: "smooth",
                 block: "center",
               });
             } else {
               alert("Oops—there was an error. Please try again.");
-              // Reset button state
               submitButton.textContent = originalButtonText;
               submitButton.disabled = false;
             }
           } catch (error) {
             console.error("Error:", error);
             alert("Oops—there was an error. Please try again.");
-            // Reset button state
             submitButton.textContent = originalButtonText;
             submitButton.disabled = false;
           }
         });
 
-      // Handle "Send Another Message" button click
+      // Send another message button
       document
         .getElementById("sendAnotherBtn")
         .addEventListener("click", function () {
-          // Hide thank you message
           document.getElementById("thankYouMsg").classList.add("hidden");
-
-          // Show the form again
           document
             .getElementById("contactForm")
             .parentNode.classList.remove("hidden");
-
-          // Reset the form fields
           document.getElementById("contactForm").reset();
-
-          // Scroll back to the form
           document.getElementById("contactForm").scrollIntoView({
             behavior: "smooth",
             block: "center",

@@ -44,8 +44,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
+      /* Color Variables - Easy to change primary and secondary colors */
+      :root {
+        --primary-blue: #1e40af; /* Main blue */
+        --primary-blue-light: #3b82f6; /* Lighter blue */
+        --primary-blue-dark: #1e3a8a; /* Darker blue */
+        --secondary-blue: #0ea5e9; /* Secondary blue */
+        --secondary-blue-light: #38bdf8; /* Light secondary blue */
+        --secondary-blue-dark: #0284c7; /* Dark secondary blue */
+        --accent-blue: #06b6d4; /* Accent blue */
+        --blue-50: #eff6ff;
+        --blue-100: #dbeafe;
+        --blue-200: #bfdbfe;
+        --blue-300: #93c5fd;
+        --blue-400: #60a5fa;
+        --blue-500: #3b82f6;
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --blue-800: #1e40af;
+        --blue-900: #1e3a8a;
+        --blue-950: #172554;
+      }
+
       @keyframes marquee {
         50% {
           transform: translateX(-20%);
@@ -59,59 +85,133 @@
       .marquee-container:hover .marquee-content {
         animation-play-state: paused;
       }
+
+      /* Modern gradient backgrounds */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--secondary-blue) 50%,
+          var(--accent-blue) 100%
+        );
+      }
+
+      .card-gradient {
+        background: linear-gradient(145deg, #ffffff 0%, var(--blue-50) 100%);
+      }
+
+      .button-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--primary-blue-light) 100%
+        );
+      }
+
+      .button-gradient:hover {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue-dark) 0%,
+          var(--primary-blue) 100%
+        );
+      }
+
+      /* Modern shadows and effects */
+      .modern-shadow {
+        box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.1),
+          0 10px 10px -5px rgba(30, 64, 175, 0.04);
+      }
+
+      .modern-shadow-lg {
+        box-shadow: 0 20px 25px -5px rgba(30, 64, 175, 0.1),
+          0 10px 10px -5px rgba(30, 64, 175, 0.04);
+      }
+
+      /* Smooth transitions */
+      .smooth-transition {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Modern border radius */
+      .modern-radius {
+        border-radius: 1rem;
+      }
+
+      .modern-radius-lg {
+        border-radius: 1.5rem;
+      }
+
+      .font1 {
+        font-family: "Amita", serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Cinzel Decorative", serif;
+      }
+      body {
+        font-family: "Merriweather", serif;
+      }
     </style>
   </head>
 
-  <body class="bg-blue-50 font-nunito overflow-x-hidden">
+  <body class="bg-blue-100 overflow-x-hidden">
     <!-- Main Grid Container -->
     <div class="min-h-screen gap-4 p-4">
       <!-- Navigation Section -->
       <nav
-        class="col-span-1 lg:col-span-2 row-start-1 bg-white rounded-lg shadow-sm p-4 flex items-center justify-between"
+        class="col-span-1 lg:col-span-2 row-start-1 card-gradient rounded-lg modern-shadow p-3 mx-5 flex items-center justify-between smooth-transition"
       >
         <div class="flex space-x-6">
           <a
             href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
             target="_blank"
-            class="text-gray-400 hover:text-blue-500 transition-colors"
+            class="hover:text-gray-400 text-[var(--primary-blue)] smooth-transition"
           >
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
           <a
             href="https://github.com/sujanamht"
             target="_blank"
-            class="text-gray-400 hover:text-gray-800 transition-colors"
+            class="hover:text-gray-400 smooth-transition"
           >
             <i class="fab fa-github fa-2x"></i>
           </a>
           <a
             href="mailto:suzanamht@gmail.com"
-            class="text-gray-400 hover:text-red-500 transition-colors"
+            class="hover:text-gray-400 text-red-400 smooth-transition"
           >
             <i class="fas fa-envelope fa-2x"></i>
           </a>
         </div>
         <div>
-          <h1 class="text-3xl font1 text-gray-800">SUJANA</h1>
+          <h1
+            class="text-3xl font1 text-[var(--primary-blue)] celtic font-bold"
+          >
+            SUJANA
+          </h1>
         </div>
       </nav>
 
       <!-- Hero Section -->
       <!-- ===== MAIN SECTION ===== -->
       <div
-        class="relative min-h-[90vh] text-white p-6 grid grid-rows-[3fr_2fr] gap-4"
+        class="relative min-h-[90vh] text-white p-5 grid grid-rows-[3fr_2fr] gap-4 modern-radius-lg"
       >
         <!-- Floating 3-pill strip (top-right, over the top row) -->
-        <div class="absolute top-1 bg-blue-50 right-2 rounded-2xl p-4 m-4 z-30">
+        <div
+          class="absolute top-1 bg-blue-100 right-1 modern-radius p-5 m-3 z-30"
+        >
           <div class="flex items-center gap-3 flex-wrap justify-end text-xl">
             <a
               href="#data-science"
-              class="px-6 py-2 rounded-2xl bg-white/90 text-neutral-900 font-medium border border-white/30 shadow"
+              class="px-6 py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-medium border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
               >Data Science</a
             >
             <a
               href="#software-developer"
-              class="px-5 py-2 rounded-2xl bg-white/90 text-neutral-900 font-medium border border-white/30 shadow"
+              class="px-5 py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-medium border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
               >Software Developer</a
             >
           </div>
@@ -140,17 +240,59 @@
               class="absolute inset-0 left-0 right-0 z-10 flex flex-row justify-between items-center md:p-8"
             >
               <!-- Left side - centered -->
-              <div class="flex items-center">
-                <div>
-                  <h1 class="text-5xl md:text-6xl font-serif my-8">
-                    Sujana Mehta
-                  </h1>
-                  <a
-                    href="#contact"
-                    class="inline-block px-6 py-2 bg-white text-gray-800 rounded-2xl font-semibold hover:bg-gray-100 transition shadow-lg hover:shadow-xl"
-                  >
-                    CONTACT ME
-                  </a>
+              <div class="flex items-end gap-6">
+                <!-- Profile Image -->
+                <div class="flex-shrink-0">
+                  <div class="relative group">
+                    <div
+                      class="absolute -inset-1 bg-gradient-to-r from-[var(--primary-blue)] to-[var(--secondary-blue)] rounded-full blur opacity-10 group-hover:opacity-70 transition duration-300"
+                    ></div>
+                    <img
+                      src="img/me.png"
+                      alt="Sujana Mehta"
+                      class="relative modern-radius-lg w-44 h-auto object-fill modern-shadow-lg group-hover:ring-white/40 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+
+                <!-- Name and Contact -->
+                <div class="flex-1">
+                  <div class="space-y-6">
+                    <!-- Name Section -->
+                    <div>
+                      <h1 class="text-6xl text-white drop-shadow-2xl mb-2">
+                        Sujana Mehta
+                      </h1>
+                    </div>
+
+                    <!-- Contact Button -->
+                    <div class="flex items-center gap-4">
+                      <a
+                        href="#contact"
+                        class="group relative inline-flex items-center gap-3 mb-1 px-6 py-3 bg-white text-[var(--primary-blue)] modern-radius-lg font-semibold hover:bg-[var(--blue-50)] transition-all duration-300 modern-shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden"
+                      >
+                        <div
+                          class="absolute inset-0 button-gradient opacity-0 group-hover:opacity-100 transition duration-300"
+                        ></div>
+                        <span class="relative z-10 group-hover:text-white"
+                          >CONTACT ME</span
+                        >
+                        <svg
+                          class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -170,7 +312,7 @@
                 </div>-->
               <!-- Contact button positioned at bottom right -->
               <div
-                class="absolute bottom-3 right-4 bg-gray-400/40 rounded-xl w-1/4 flex flex-row items-stretch"
+                class="absolute bottom-3 right-4 bg-white/20 backdrop-blur-sm modern-radius-lg w-1/4 flex flex-row items-stretch modern-shadow"
               >
                 <div class="flex-1 p-4">
                   <p class="text-white opacity-90 text-sm">
@@ -180,7 +322,7 @@
                 </div>
                 <a
                   href="#contact"
-                  class="bg-white text-black px-4 flex items-center justify-center rounded-r-xl hover:bg-gray-100 transition"
+                  class="bg-blue-100 text-black px-4 flex items-center justify-center rounded-r-lg hover:bg-[var(--blue-500)] smooth-transition"
                 >
                   >
                 </a>
@@ -192,19 +334,23 @@
         <!-- ===== Bottom (40%) ===== -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-black">
           <!-- Experience (spans 2 columns) -->
-          <section class="md:col-span-2 bg-white text-black rounded-2xl p-6">
-            <h2 class="text-3xl font-bold mb-4">Experience</h2>
+          <section
+            class="md:col-span-2 card-gradient text-black modern-radius-lg p-6 modern-shadow"
+          >
+            <h2 class="text-3xl font-bold mb-4 text-[var(--primary-blue)]">
+              Experience
+            </h2>
             <div class="space-y-6">
               <!-- Experience Item 1 -->
               <div
-                class="border-l-4 border-blue-500 pl-6 hover:bg-blue-50/50 rounded-r-xl transition-colors"
+                class="border-l-4 border-[var(--primary-blue)] pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
               >
                 <div class="flex justify-between items-start">
                   <h3 class="font-bold text-sm text-gray-800">
                     Software Developer
                   </h3>
                   <span
-                    class="text-sm text-gray-500 bg-gray-100 px-4 py-1 rounded-full"
+                    class="text-sm text-[var(--primary-blue)] bg-[var(--blue-100)] px-4 py-1 modern-radius-lg"
                     >Feb 2022 – Present</span
                   >
                 </div>
@@ -212,14 +358,14 @@
 
               <!-- Experience Item 2 -->
               <div
-                class="border-l-4 border-green-500 pl-6 hover:bg-green-50/50 rounded-r-xl transition-colors"
+                class="border-l-4 border-[var(--secondary-blue)] pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
               >
                 <div class="flex justify-between items-start">
                   <h3 class="font-bold text-sm text-gray-800">
                     Praxis Technical Teaching Assistant
                   </h3>
                   <span
-                    class="text-sm text-gray-500 bg-gray-100 px-4 py-1 rounded-full"
+                    class="text-sm text-[var(--secondary-blue)] bg-[var(--blue-100)] px-4 py-1 modern-radius-lg"
                     >June 2025 – Present</span
                   >
                 </div>
@@ -227,14 +373,14 @@
 
               <!-- Experience Item 3 -->
               <div
-                class="border-l-4 border-purple-500 pl-6 hover:bg-purple-50/50 rounded-r-xl transition-colors"
+                class="border-l-4 border-[var(--accent-blue)] pl-6 hover:bg-[var(--blue-50)]/50 modern-radius-lg smooth-transition"
               >
                 <div class="flex justify-between items-start">
                   <h3 class="font-bold text-sm text-gray-800">
                     Research Assistant
                   </h3>
                   <span
-                    class="text-sm text-gray-500 bg-gray-100 px-4 py-1 rounded-full"
+                    class="text-sm text-[var(--accent-blue)] bg-[var(--blue-100)] px-4 py-1 modern-radius-lg"
                     >May 2024 – May 2025</span
                   >
                 </div>
@@ -243,72 +389,76 @@
           </section>
 
           <!-- Skills -->
-          <section class="bg-white rounded-2xl p-6">
-            <h2 class="text-3xl font-bold mb-4">Skills</h2>
+          <section class="card-gradient modern-radius-lg p-6 modern-shadow">
+            <h2 class="text-3xl font-bold mb-4 text-[var(--primary-blue)]">
+              Skills
+            </h2>
             <ul class="flex flex-wrap gap-2">
               <span
-                class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 button-gradient text-white modern-radius-lg text-sm font-medium"
                 >Python</span
               >
               <span
-                class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--secondary-blue)] text-white modern-radius-lg text-sm font-medium"
                 >SQL</span
               >
               <span
-                class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 button-gradient text-white modern-radius-lg text-sm font-medium"
                 >React</span
               >
               <span
-                class="px-3 py-1.5 bg-orange-100 text-orange-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--secondary-blue)] text-white modern-radius-lg text-sm font-medium"
                 >Pandas</span
               >
               <span
-                class="px-3 py-1.5 bg-red-100 text-red-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--blue-100)] text-[var(--primary-blue)] modern-radius-lg text-sm font-medium"
                 >ML</span
               >
               <span
-                class="px-3 py-1.5 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--blue-200)] text-[var(--primary-blue-dark)] modern-radius-lg text-sm font-medium"
                 >Data Analysis</span
               >
               <span
-                class="px-3 py-1.5 bg-cyan-100 text-cyan-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--blue-300)] text-[var(--primary-blue-dark)] modern-radius-lg text-sm font-medium"
                 >Tailwind</span
               >
               <span
-                class="px-3 py-1.5 bg-pink-100 text-pink-800 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--blue-400)] text-white modern-radius-lg text-sm font-medium"
                 >HTML/CSS</span
               >
             </ul>
           </section>
 
           <!-- Projects -->
-          <section class="bg-white rounded-2xl p-6">
-            <h2 class="text-3xl font-bold mb-4">Projects</h2>
+          <section class="card-gradient modern-radius-lg p-6 modern-shadow">
+            <h2 class="text-3xl font-bold mb-4 text-[var(--primary-blue)]">
+              Projects
+            </h2>
             <div class="grid grid-cols-2 gap-2">
               <a href="#p1" class="group">
                 <div
-                  class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-16"
+                  class="button-gradient modern-radius-lg flex items-center justify-center text-white font-bold text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-16"
                 >
                   RIVETTO
                 </div>
               </a>
               <a href="#p2" class="group">
                 <div
-                  class="bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-16"
+                  class="bg-gradient-to-br from-[var(--secondary-blue)] to-[var(--secondary-blue-dark)] modern-radius-lg flex items-center justify-center text-white font-bold text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-16"
                 >
                   SELU ADVISOR
                 </div>
               </a>
               <a href="#p3" class="group">
                 <div
-                  class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-16"
+                  class="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--secondary-blue-dark)] modern-radius-lg flex items-center justify-center text-white font-bold text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-16"
                 >
                   RECIPE GEN
                 </div>
               </a>
               <a href="#p4" class="group">
                 <div
-                  class="bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 h-16"
+                  class="bg-gradient-to-br from-[var(--blue-400)] to-[var(--blue-600)] modern-radius-lg flex items-center justify-center text-white font-bold text-sm modern-shadow group-hover:shadow-lg smooth-transition group-hover:scale-105 h-16"
                 >
                   EEG DATA
                 </div>
@@ -317,199 +467,17 @@
           </section>
         </div>
       </div>
-
-      <!-- Experience (spans 2 columns) -->
-      <section
-        class="md:col-span-2 bg-white/95 backdrop-blur-sm text-gray-800 rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
-      >
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-          <h2 class="text-2xl font-bold text-gray-800">Experience</h2>
-        </div>
-        <div class="space-y-6">
-          <!-- Experience Item 1 -->
-          <div
-            class="border-l-4 border-blue-500 pl-6 py-4 hover:bg-blue-50/50 rounded-r-xl transition-colors"
-          >
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="font-bold text-lg text-gray-800">Developer</h3>
-              <span
-                class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full"
-                >Feb 2022 – Present</span
-              >
-            </div>
-            <p class="font-semibold text-blue-600 mb-1">IT Nepal Solutions</p>
-            <p class="text-sm text-gray-600">Kathmandu, Nepal</p>
-          </div>
-
-          <!-- Experience Item 2 -->
-          <div
-            class="border-l-4 border-green-500 pl-6 py-4 hover:bg-green-50/50 rounded-r-xl transition-colors"
-          >
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="font-bold text-lg text-gray-800">
-                Praxis Technical Teaching Assistant
-              </h3>
-              <span
-                class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full"
-                >June 2025 – Present</span
-              >
-            </div>
-            <p class="font-semibold text-green-600 mb-1">
-              Southeastern Louisiana University
-            </p>
-            <p class="text-sm text-gray-600">Hammond, Louisiana</p>
-          </div>
-
-          <!-- Experience Item 3 -->
-          <div
-            class="border-l-4 border-purple-500 pl-6 py-4 hover:bg-purple-50/50 rounded-r-xl transition-colors"
-          >
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="font-bold text-lg text-gray-800">
-                Research Assistant
-              </h3>
-              <span
-                class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full"
-                >May 2024 – May 2025</span
-              >
-            </div>
-            <p class="font-semibold text-purple-600 mb-1">
-              Research & Development Team [Wright's Lab]
-            </p>
-            <p class="text-sm text-gray-600">Hammond, Louisiana</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section
-        class="bg-white/95 backdrop-blur-sm text-gray-800 rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
-      >
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-          <h2 class="text-2xl font-bold text-gray-800">Skills</h2>
-        </div>
-        <div class="space-y-4">
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide"
-            >
-              Programming Languages
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
-                >Python</span
-              >
-              <span
-                class="px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-sm font-medium"
-                >SQL</span
-              >
-              <span
-                class="px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
-                >React</span
-              >
-            </div>
-          </div>
-
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide"
-            >
-              Data Science
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1.5 bg-orange-100 text-orange-800 rounded-full text-sm font-medium"
-                >Pandas</span
-              >
-              <span
-                class="px-3 py-1.5 bg-red-100 text-red-800 rounded-full text-sm font-medium"
-                >ML</span
-              >
-              <span
-                class="px-3 py-1.5 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium"
-                >Data Analysis</span
-              >
-            </div>
-          </div>
-
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide"
-            >
-              Frontend
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1.5 bg-cyan-100 text-cyan-800 rounded-full text-sm font-medium"
-                >Tailwind</span
-              >
-              <span
-                class="px-3 py-1.5 bg-pink-100 text-pink-800 rounded-full text-sm font-medium"
-                >HTML/CSS</span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section
-        class="bg-white/95 backdrop-blur-sm text-gray-800 rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
-      >
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
-          <h2 class="text-2xl font-bold text-gray-800">Projects</h2>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <a href="#p1" class="group">
-            <div
-              class="aspect-square bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-            >
-              RIVETTO
-            </div>
-          </a>
-          <a href="#p2" class="group">
-            <div
-              class="aspect-square bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-            >
-              SELU ADVISOR
-            </div>
-          </a>
-          <a href="#p3" class="group">
-            <div
-              class="aspect-square bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-            >
-              RECIPE GEN
-            </div>
-          </a>
-          <a href="#p4" class="group">
-            <div
-              class="aspect-square bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-            >
-              EEG DATA
-            </div>
-          </a>
-        </div>
-        <div class="mt-4 text-center">
-          <a
-            href="#projects"
-            class="text-sm text-blue-600 hover:text-blue-800 font-medium"
-            >View All Projects →</a
-          >
-        </div>
-      </section>
     </div>
     <!-- Content Panels -->
-    <div class="px-6 py-16 bg-gray-50 min-h-[80vh]">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="px-6 py-16 bg-[var(--blue-50)] min-h-[80vh]">
+      <div class="max-w-7xl mx-auto space-y-16">
         <!-- Skills Panel -->
         <div
-          class="bg-white rounded-xl p-8 shadow-md border border-gray-200 bg-gradient-to-br from-blue-200 to-blue-100 min-h-[400px]"
+          class="card-gradient modern-radius-lg p-8 modern-shadow border border-[var(--blue-200)]"
         >
-          <h2 class="text-2xl font-serif text-gray-800 mb-4">SKILLS</h2>
+          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">
+            SKILLS
+          </h2>
           <div
             class="marquee-container flex space-x-4 text-3xl overflow-hidden"
           >
@@ -562,9 +530,11 @@
 
         <!-- Projects Panel with React Island -->
         <div
-          class="bg-white rounded-xl p-8 shadow-md border border-gray-200 min-h-[400px]"
+          class="card-gradient modern-radius-lg p-8 modern-shadow border border-[var(--blue-200)] min-h-[400px]"
         >
-          <h2 class="text-2xl font-serif text-gray-800 mb-4">PROJECTS</h2>
+          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">
+            PROJECTS
+          </h2>
           <div
             id="project-filter-react-island"
             class="rounded-lg overflow-hidden"
@@ -573,9 +543,11 @@
 
         <!-- Experience Timeline Panel with React Island -->
         <div
-          class="bg-white rounded-xl p-8 shadow-md border border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200 overflow-y-auto min-h-[500px] max-h-[70vh]"
+          class="card-gradient modern-radius-lg p-8 modern-shadow border border-[var(--blue-200)] bg-gradient-to-br from-[var(--blue-50)] to-[var(--blue-100)] overflow-y-auto min-h-[500px] max-h-[70vh]"
         >
-          <h2 class="text-2xl font-serif text-gray-800 mb-4">EXPERIENCE</h2>
+          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">
+            EXPERIENCE
+          </h2>
           <div
             id="timeline-react-island"
             class="rounded-lg overflow-hidden"
@@ -585,8 +557,10 @@
     </div>
 
     <!-- Contact Footer Section -->
-    <footer id="contact" class="bg-white shadow-sm p-12 min-h-[60vh]">
-      <h2 class="text-3xl font-serif text-gray-800 mb-6 text-center">
+    <footer id="contact" class="card-gradient modern-shadow p-12 min-h-[60vh]">
+      <h2
+        class="text-3xl font-bold text-[var(--primary-blue)] mb-6 text-center"
+      >
         CONTACT ME
       </h2>
       <div class="flex flex-col md:flex-row justify-between gap-8">
@@ -612,7 +586,9 @@
             </button>
           </div>
 
-          <div class="max-w-lg mx-auto rounded-lg shadow-lg p-6 bg-gray-50">
+          <div
+            class="max-w-lg mx-auto modern-radius-lg modern-shadow p-6 bg-white"
+          >
             <form
               id="contactForm"
               action="https://api.web3forms.com/submit"
@@ -629,7 +605,7 @@
                   type="text"
                   id="name"
                   name="name"
-                  class="flex-1 border border-gray-300 rounded-lg px-3 py-2"
+                  class="flex-1 border border-[var(--blue-300)] modern-radius-lg px-3 py-2 focus:border-[var(--primary-blue)] focus:ring-2 focus:ring-[var(--blue-200)] smooth-transition"
                   placeholder="Your Name"
                   required
                 />
@@ -637,7 +613,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  class="flex-1 border border-gray-300 rounded-lg px-3 py-2"
+                  class="flex-1 border border-[var(--blue-300)] modern-radius-lg px-3 py-2 focus:border-[var(--primary-blue)] focus:ring-2 focus:ring-[var(--blue-200)] smooth-transition"
                   placeholder="Your Email"
                   required
                 />
@@ -646,13 +622,13 @@
                 id="message"
                 name="message"
                 rows="4"
-                class="w-full border border-gray-300 rounded-lg px-3 py-2"
+                class="w-full border border-[var(--blue-300)] modern-radius-lg px-3 py-2 focus:border-[var(--primary-blue)] focus:ring-2 focus:ring-[var(--blue-200)] smooth-transition"
                 placeholder="Your Message"
                 required
               ></textarea>
               <button
                 type="submit"
-                class="w-full bg-blue-600 text-white rounded-lg py-2 font-medium hover:bg-blue-700 transition duration-300"
+                class="w-full button-gradient text-white modern-radius-lg py-2 font-medium hover:shadow-lg smooth-transition"
               >
                 Send Message
               </button>
@@ -661,13 +637,15 @@
         </div>
 
         <!-- Social Links -->
-        <div class="flex-1 flex flex-col items-center justify-center">
-          <h4 class="text-gray-600 text-xl mb-6">- or find me here:</h4>
+        <div
+          class="w-3/4 md:w-1/2 flex flex-col items-center m-10 md:m-20 border-l-0 md:border-l-4 border-gray-700 pl-0 md:pl-4"
+        >
+          <h4 class="text-gray-500 text-3xl md:m-8">- or find me here:</h4>
           <div class="flex flex-col space-y-4">
             <a
               href="https://www.linkedin.com/in/sujana-mehta-924bb0260/"
               target="_blank"
-              class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 transition-colors"
+              class="flex items-center space-x-3 text-[var(--primary-blue)] hover:text-[var(--primary-blue-dark)] smooth-transition"
             >
               <i class="fab fa-linkedin fa-2x"></i>
               <span>LinkedIn</span>
@@ -675,14 +653,14 @@
             <a
               href="https://github.com/sujanamht"
               target="_blank"
-              class="flex items-center space-x-3 text-gray-600 hover:text-gray-800 transition-colors"
+              class="flex items-center space-x-3 text-black hover:text-[var(--secondary-blue-dark)] smooth-transition"
             >
               <i class="fab fa-github fa-2x"></i>
               <span>GitHub</span>
             </a>
             <a
               href="mailto:suzanamht@gmail.com"
-              class="flex items-center space-x-3 text-gray-600 hover:text-red-500 transition-colors"
+              class="flex items-center space-x-3 text-red-500 hover:text-[var(--secondary-blue-dark)] smooth-transition"
             >
               <i class="fas fa-envelope fa-2x"></i>
               <span>Email</span>
@@ -795,10 +773,10 @@
                 <button
                   key={category}
                   onClick={() => setSelectedFilter(category)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-3 py-1 modern-radius-lg text-sm font-medium smooth-transition ${
                     selectedFilter === category
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                      ? "button-gradient text-white"
+                      : "bg-[var(--blue-100)] text-[var(--primary-blue)] hover:bg-[var(--blue-200)]"
                   }`}
                 >
                   {category}
@@ -811,16 +789,16 @@
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-gray-50 rounded-lg p-4 border border-gray-300 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
+                  className="card-gradient modern-radius-lg p-4 border border-[var(--blue-200)] smooth-transition cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
                   onClick={() => openModal(project)}
                 >
-                  <h3 className="font-semibold text-gray-800 mb-2">
+                  <h3 className="font-semibold text-[var(--primary-blue)] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <p className="text-sm text-[var(--secondary-blue)] mb-2">
                     {project.technologies}
                   </p>
-                  <p className="text-xs text-gray-500 line-clamp-2">
+                  <p className="text-xs text-gray-600 line-clamp-2">
                     {project.description}
                   </p>
                 </div>
@@ -897,20 +875,28 @@
             {experiences.map((exp) => (
               <div
                 key={exp.id}
-                className="bg-white rounded-xl p-4 mb-4 border-l-4 border-blue-500 shadow-sm transition-all duration-300 ease-in-out hover:translate-x-1 hover:shadow-md"
+                className="card-gradient modern-radius-lg p-4 mb-4 border-l-4 border-[var(--primary-blue)] modern-shadow smooth-transition hover:translate-x-1 hover:shadow-lg"
               >
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-semibold text-gray-800">{exp.company}</h3>
-                  <span className="text-xs text-gray-500">{exp.location}</span>
+                  <h3 className="font-semibold text-[var(--primary-blue)]">
+                    {exp.company}
+                  </h3>
+                  <span className="text-xs text-[var(--secondary-blue)]">
+                    {exp.location}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center mb-2">
-                  <p className="text-sm text-gray-600">{exp.role}</p>
-                  <span className="text-xs text-gray-500">{exp.duration}</span>
+                  <p className="text-sm text-[var(--primary-blue-dark)]">
+                    {exp.role}
+                  </p>
+                  <span className="text-xs text-[var(--accent-blue)]">
+                    {exp.duration}
+                  </span>
                 </div>
                 <ul className="text-xs text-gray-700 space-y-1">
                   {exp.description.map((desc, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="w-1 h-1 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                      <span className="w-1 h-1 bg-[var(--primary-blue)] rounded-full mt-2 mr-2 flex-shrink-0"></span>
                       {desc}
                     </li>
                   ))}

@@ -53,12 +53,12 @@
       /* Color Variables - Easy to change primary and secondary colors */
       :root {
         --primary-blue: #1e40af; /* Main blue */
-        --primary-blue-light: #3b82f6; /* Lighter blue */
-        --primary-blue-dark: #1e3a8a; /* Darker blue */
-        --secondary-blue: #0ea5e9; /* Secondary blue */
-        --secondary-blue-light: #38bdf8; /* Light secondary blue */
-        --secondary-blue-dark: #0284c7; /* Dark secondary blue */
-        --accent-blue: #06b6d4; /* Accent blue */
+        --primary-blue-light: #99c5f8; /* Lighter blue */
+        --primary-blue-dark: #192853; /* Darker blue */
+        --secondary-blue: #5c7f8f; /* Secondary blue */
+        --secondary-blue-light: #99b6c4; /* Light secondary blue */
+        --secondary-blue-dark: #516874; /* Dark secondary blue */
+        --accent-blue: #dd6e42; /* Accent blue */
         --blue-50: #eff6ff;
         --blue-100: #dbeafe;
         --blue-200: #bfdbfe;
@@ -70,6 +70,7 @@
         --blue-800: #1e40af;
         --blue-900: #1e3a8a;
         --blue-950: #172554;
+        --body-color: #eaeaea;
       }
 
       @keyframes marquee {
@@ -156,7 +157,7 @@
     </style>
   </head>
 
-  <body class="bg-blue-100 overflow-x-hidden">
+  <body class="bg-[var(--body-color)] overflow-x-hidden">
     <!-- Main Grid Container -->
     <div class="min-h-screen gap-4 p-4">
       <!-- Navigation Section -->
@@ -201,17 +202,17 @@
       >
         <!-- Floating 3-pill strip (top-right, over the top row) -->
         <div
-          class="absolute top-1 bg-blue-100 right-1 modern-radius p-5 m-3 z-30"
+          class="absolute top-1 bg-[var(--body-color)] right-1 modern-radius p-5 m-3 z-30"
         >
           <div class="flex items-center gap-3 flex-wrap justify-end text-xl">
             <a
               href="#data-science"
-              class="px-6 py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-medium border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
+              class="px-6 py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-bold border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
               >Data Science</a
             >
             <a
               href="#software-developer"
-              class="px-5 py-3 modern-radius-lg bg-white/90 text-[var(--primary-blue)] font-medium border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
+              class="px-5 py-3 modern-radius-lg bg-white/90 text-[var(--secondary-blue-dark)] font-bold border border-[var(--blue-200)] shadow smooth-transition hover:bg-[var(--blue-50)]"
               >Software Developer</a
             >
           </div>
@@ -411,7 +412,7 @@
                 >Pandas</span
               >
               <span
-                class="px-3 py-1.5 bg-[var(--blue-100)] text-[var(--primary-blue)] modern-radius-lg text-sm font-medium"
+                class="px-3 py-1.5 bg-[var(--blue-100)] text-[var(--primary-blue-dark)] modern-radius-lg text-sm font-medium"
                 >ML</span
               >
               <span

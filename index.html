@@ -17,6 +17,19 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <!-- Crisp Chat Integration -->
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "563ca337-9972-46cd-92c9-2931e3798e1c";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -193,6 +206,14 @@
             SUJANA
           </h1>
         </div>
+        <!-- <div>
+          <button
+            onclick="window.openNewsletterModal && window.openNewsletterModal()"
+            class="px-3 py-1 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm font-medium"
+          >
+            Let's Chat
+          </button>
+        </div> -->
       </nav>
 
       <!-- Hero Section -->
@@ -276,18 +297,13 @@
                     <div
                       class="flex items-center justify-center sm:justify-start gap-4"
                     >
-                      <a
-                        href="#contact"
-                        class="group relative inline-flex items-center gap-2 sm:gap-3 mb-1 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white text-[var(--primary-blue)] modern-radius-lg font-semibold hover:bg-[var(--blue-50)] transition-all duration-300 modern-shadow-lg hover:shadow-2xl hover:scale-105 overflow-hidden text-sm sm:text-base"
+                      <button
+                        onclick="window.openNewsletterModal && window.openNewsletterModal()"
+                        class="inline-flex items-center gap-2 sm:gap-3 mb-1 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white text-[var(--primary-blue)] modern-radius-lg font-semibold hover:bg-[var(--blue-50)] transition-colors modern-shadow-lg text-sm sm:text-base"
                       >
-                        <div
-                          class="absolute inset-0 button-gradient opacity-0 group-hover:opacity-100 transition duration-300"
-                        ></div>
-                        <span class="relative z-10 group-hover:text-white"
-                          >HIRE ME</span
-                        >
+                        Let's Chat
                         <svg
-                          class="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300"
+                          class="w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -299,7 +315,7 @@
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           ></path>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -803,6 +819,9 @@
       </div>
     </footer>
 
+    <!-- Newsletter Modal Container -->
+    <div id="newsletter-modal-container"></div>
+
     <!-- Popup Modal for Projects -->
     <div
       id="popupModal"
@@ -950,6 +969,219 @@
         );
       }
 
+      // Newsletter Modal React Island
+      function NewsletterModal({
+        open,
+        onClose,
+        aboutMeMessage,
+        onSubscribed,
+      }) {
+        const [email, setEmail] = useState("");
+        const [consent, setConsent] = useState(false);
+        const [isSubmitting, setIsSubmitting] = useState(false);
+        const [isSuccess, setIsSuccess] = useState(false);
+        const [error, setError] = useState("");
+
+        const defaultAboutMeMessage =
+          "Hi! I'm Sujana — a CS major with a Data Science focus, graduating Dec 2025. I build AI-powered tools in React/TS, Python/Django, and .NET. I also lead the Women in Tech chapter at SELU.";
+
+        const validateEmail = (email) => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        };
+
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          setError("");
+
+          if (!email) {
+            setError("Please enter your email address");
+            return;
+          }
+
+          if (!validateEmail(email)) {
+            setError("Please enter a valid email address");
+            return;
+          }
+
+          if (!consent) {
+            setError("Please accept the terms to continue");
+            return;
+          }
+
+          setIsSubmitting(true);
+
+          try {
+            // Optional: Save email to backend/newsletter API
+            // await fetch('/api/subscribe', {
+            //   method: 'POST',
+            //   headers: { 'Content-Type': 'application/json' },
+            //   body: JSON.stringify({ email })
+            // });
+
+            // Set email in Crisp chat session
+            if (window.$crisp) {
+              window.$crisp.push(["set", "user:email", [email]]);
+            }
+
+            // Show success message
+            setIsSuccess(true);
+
+            // Send pre-written message to chat
+            setTimeout(() => {
+              if (window.$crisp) {
+                const message = aboutMeMessage || defaultAboutMeMessage;
+                window.$crisp.push(["do", "message:send", [message]]);
+                window.$crisp.push(["do", "chat:open"]);
+              }
+            }, 1000);
+
+            // Close modal after delay
+            setTimeout(() => {
+              onClose();
+              if (onSubscribed) onSubscribed(email);
+            }, 3000);
+          } catch (error) {
+            console.error("Error:", error);
+            setError("Something went wrong. Please try again.");
+          } finally {
+            setIsSubmitting(false);
+          }
+        };
+
+        const handleKeyDown = (e) => {
+          if (e.key === "Escape") {
+            onClose();
+          }
+        };
+
+        if (!open) return null;
+
+        return (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+            onClick={(e) => e.target === e.currentTarget && onClose()}
+            onKeyDown={handleKeyDown}
+            tabIndex={-1}
+          >
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 transform transition-all duration-300 scale-100">
+              {isSuccess ? (
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg
+                      className="w-8 h-8 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Sent! Opening chat...
+                  </h3>
+                  <p className="text-gray-600">
+                    Thanks for subscribing! I'll be in touch soon.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg
+                        className="w-8 h-8 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Let's Connect!
+                    </h3>
+                    <p className="text-gray-600">
+                      Get in touch and I'll share more about my work and
+                      projects.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      />
+                      <label
+                        htmlFor="consent"
+                        className="text-sm text-gray-600"
+                      >
+                        I want to receive updates about Sujana's work and
+                        projects. You can unsubscribe at any time.
+                      </label>
+                    </div>
+
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                        <p className="text-red-600 text-sm">{error}</p>
+                      </div>
+                    )}
+
+                    <div className="flex space-x-3 pt-2">
+                      <button
+                        type="button"
+                        onClick={onClose}
+                        className="flex-1 px-4 py-3 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+                      >
+                        Maybe Later
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="flex-1 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
+                      >
+                        {isSubmitting ? "Sending..." : "Connect & Chat"}
+                      </button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      }
+
       // Timeline React Island
       function Timeline() {
         const [experiences] = useState([
@@ -1049,6 +1281,71 @@
         );
       }
 
+      // Newsletter Modal Manager
+      function NewsletterModalManager() {
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        const [hasShownModal, setHasShownModal] = useState(false);
+
+        const openModal = () => {
+          setIsModalOpen(true);
+          setHasShownModal(true);
+        };
+
+        const closeModal = () => {
+          setIsModalOpen(false);
+        };
+
+        const handleSubscribed = (email) => {
+          console.log("User subscribed:", email);
+          // Optional: Track subscription event
+        };
+
+        // Time-based trigger (30 seconds)
+        useEffect(() => {
+          if (!hasShownModal) {
+            const timer = setTimeout(() => {
+              openModal();
+            }, 30000); // 30 seconds
+
+            return () => clearTimeout(timer);
+          }
+        }, [hasShownModal]);
+
+        // Scroll-based trigger (50% scroll depth)
+        useEffect(() => {
+          const handleScroll = () => {
+            if (!hasShownModal) {
+              const scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+              const scrollHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
+              const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+              if (scrollPercentage >= 50) {
+                openModal();
+              }
+            }
+          };
+
+          window.addEventListener("scroll", handleScroll);
+          return () => window.removeEventListener("scroll", handleScroll);
+        }, [hasShownModal]);
+
+        // Expose global function for manual trigger
+        useEffect(() => {
+          window.openNewsletterModal = openModal;
+        }, []);
+
+        return (
+          <NewsletterModal
+            open={isModalOpen}
+            onClose={closeModal}
+            aboutMeMessage="Hi! I'm Sujana — a CS major with a Data Science focus, graduating Dec 2025. I build AI-powered tools in React/TS, Python/Django, and .NET. I also lead the Women in Tech chapter at SELU."
+            onSubscribed={handleSubscribed}
+          />
+        );
+      }
+
       // Mount React Islands
       const projectRoot = ReactDOM.createRoot(
         document.getElementById("project-filter-react-island")
@@ -1059,6 +1356,11 @@
         document.getElementById("timeline-react-island")
       );
       timelineRoot.render(<Timeline />);
+
+      const newsletterModalRoot = ReactDOM.createRoot(
+        document.getElementById("newsletter-modal-container")
+      );
+      newsletterModalRoot.render(<NewsletterModalManager />);
     </script>
 
     <!-- Regular JavaScript -->
